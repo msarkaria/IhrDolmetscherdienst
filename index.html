@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ride Booking | Home</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
 
@@ -20,12 +19,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <h1>Book Your Ride Now</h1>
-    <button id="openBooking">Book Now</button>
+    <button id="openOverlay">Book Now</button>
   </section>
 
-  <!-- Booking Modal -->
-  <div id="bookingModal" class="modal">
-    <div class="modal-content">
+  <!-- Full-screen Booking Overlay -->
+  <div id="bookingOverlay" class="overlay">
+    <div class="overlay-content">
       <span class="close">&times;</span>
       <h2>Ride Booking Form</h2>
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -54,7 +53,6 @@
     </div>
   </div>
 
-  <!-- Link to external JS -->
   <script src="/assets/script.js"></script>
 </body>
 </html>
