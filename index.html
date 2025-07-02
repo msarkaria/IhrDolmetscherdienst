@@ -1,21 +1,60 @@
-<!-- Hero -->
-<section class="hero">
-  <h1>Book Your Ride</h1>
-  <button id="openBooking">Book Now</button>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ride Booking | Home</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
 
-<!-- Booking Modal -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Ride Booking Form</h2>
-    <form>
-      <label>Pickup Location: <input type="text" name="pickup" required></label>
-      <label>Drop-off Location: <input type="text" name="dropoff" required></label>
-      <label>Date & Time: <input type="datetime-local" name="datetime" required></label>
-      <label>Passenger Name: <input type="text" name="name" required></label>
-      <label>Phone: <input type="tel" name="phone" required></label>
-      <button type="submit">Submit Booking</button>
-    </form>
+  <!-- Navbar -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/about.html">About Us</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Book Your Ride Now</h1>
+    <button id="openBooking">Book Now</button>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Ride Booking Form</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>
+          Pickup Location:
+          <input type="text" name="pickup" required>
+        </label>
+        <label>
+          Drop-off Location:
+          <input type="text" name="dropoff" required>
+        </label>
+        <label>
+          Date & Time:
+          <input type="datetime-local" name="datetime" required>
+        </label>
+        <label>
+          Passenger Name:
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Phone:
+          <input type="tel" name="phone" required>
+        </label>
+        <button type="submit">Submit Booking</button>
+      </form>
+    </div>
   </div>
-</div>
+
+  <!-- Link to external JS -->
+  <script src="/assets/script.js"></script>
+</body>
+</html>
