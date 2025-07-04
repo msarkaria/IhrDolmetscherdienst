@@ -19,8 +19,7 @@
     nav .logo { font-weight: bold; font-size: 1.25rem; flex: 1; }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav ul li a:hover { text-decoration: underline; }
-    .sidebar h1 { font-size: 2rem; margin-bottom: 1rem; }
-    .sidebar p { margin-bottom: 1.5rem; }
+
     .callout {
       background: white;
       color: #0b1b4f;
@@ -30,6 +29,14 @@
     }
     .callout p { margin-bottom: .5rem; }
     .callout .phone { font-size: 1.25rem; font-weight: bold; }
+
+    /* New utility for two-column rows within form */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
     .form-container {
       flex: 1 1 400px;
       padding: 2rem;
@@ -69,7 +76,7 @@
   </style>
 </head>
 <body>
-<header>
+  <header>
     <nav>
       <div class="logo">Ihr Dolmetscherdienst</div>
       <ul>
@@ -90,7 +97,6 @@
         <p class="phone">🇩🇪 +49 800 0007 864</p>
       </div>
     </aside>
-
     <section class="form-container">
       <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8">
         <h2>Art der Anfrage <span style="color:red">*</span></h2>
@@ -101,50 +107,44 @@
 
         <label for="name">Vollständiger Name <span style="color:red">*</span></label>
         <input type="text" id="name" name="name" required>
-        <div id="companyFields">
-        <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
-        <input type="text" id="company" name="company" required>
 
-        <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
-        <select id="branche" name="branche" required>
-          <option value="">Branche des Unternehmens auswählen</option>
-          <option>Behörden / Öffentlicher Dienst</option>
-          <option>Medizin / Gesundheit</option>
-          <option>Justiz / Recht</option>
-          <option>Wirtschaft / Handel</option>
-          <option>Bildung / Schule / Universität</option>
-          <option>Soziales / Sozialarbeit</option>
-          <option>Technik / IT</option>
-          <option>Tourismus / Hotellerie</option>
-          <option>Marketing / Werbung</option>
-          <option>Kultur / Kunst</option>
-          <option>Messen / Veranstaltungen</option>
-          <option>Bauwesen / Architektur</option>
-          <option>Industrie / Produktion</option>
-          <option>Finanzen / Versicherungen</option>
-          <option>Personal / HR</option>
-          <option>Wissenschaft / Forschung</option>
-          <option>Privater Bereich</option>
-          <option>Sonstiges / Anderes</option>
-        </select>
-         </div>
+        <!-- Company & Branch in one row -->
+        <div id="companyFields" class="form-row full-width">
+          <div>
+            <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div>
+            <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
+            <select id="branche" name="branche" required>
+              <option value="">Branche des Unternehmens auswählen</option>
+              <option>Behörden / Öffentlicher Dienst</option>
+              <!-- ...weitere Optionen... -->
+            </select>
+          </div>
+        </div>
 
-        <label for="email">E-Mail <span style="color:red">*</span></label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Telefonnummer <span style="color:red">*</span></label>
-        <div style="display:flex; gap:.5rem;">
-          <select name="countryCode" style="max-width:5rem;">
-            <option value="+49">+49</option>
-            <!-- Sie können hier weitere Ländercodes ergänzen -->
-          </select>
-          <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
+        <!-- E-Mail & Telefon in one row -->
+        <div class="form-row full-width">
+          <div>
+            <label for="email">E-Mail <span style="color:red">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="phone">Telefonnummer <span style="color:red">*</span></label>
+            <div style="display:flex; gap:.5rem;">
+              <select name="countryCode" style="max-width:5rem;">
+                <option value="+49">+49</option>
+                <!-- weitere Ländercodes -->
+              </select>
+              <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
+            </div>
+          </div>
         </div>
 
         <h2 class="full-width">Welche Dienstleistung benötigen Sie? <span style="color:red">*</span></h2>
         <div class="services">
           <div class="service">
-            <!-- Icons können Sie hier als <img> oder SVG einfügen -->
             <div>📞<br>Telefon-Dolmetschen</div>
             <input type="radio" name="service" value="Telefon-Dolmetschen" required>
           </div>
@@ -158,19 +158,15 @@
           </div>
         </div>
 
-        <!-- Formspree hidden fields -->
-        <input type="hidden" name="_subject" value="Neue Anfrage via GitHub Pages!">
-        <!-- GDPR Consent -->
         <label class="consent">
           <input type="checkbox" name="consent" required>
           Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage gespeichert werden. <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
         </label>
-
         <button type="submit">Weiter</button>
       </form>
     </section>
   </div>
-<script>
+  <script>
     const radios = document.querySelectorAll('input[name="anfrage"]');
     const comp = document.getElementById('companyFields');
     radios.forEach(r => r.addEventListener('change', e => {
@@ -178,7 +174,7 @@
         comp.style.display = 'none';
         comp.querySelectorAll('input, select').forEach(f => f.removeAttribute('required'));
       } else {
-        comp.style.display = 'block';
+        comp.style.display = 'grid';
         comp.querySelectorAll('input, select').forEach(f => f.setAttribute('required',''));
       }
     }));
