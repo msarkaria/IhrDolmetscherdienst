@@ -1,58 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ride Booking | Home</title>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta charset="UTF-8">
+  <title>Angebot anfordern</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; line-height: 1.5; color: #1a1a1a; }
+    .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
+    .sidebar {
+      flex: 1 1 300px;
+      background: #0b1b4f;
+      color: white;
+      padding: 2rem;
+    }
+    .sidebar h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .sidebar p { margin-bottom: 1.5rem; }
+    .callout {
+      background: white;
+      color: #0b1b4f;
+      padding: 1rem;
+      border-radius: .5rem;
+      margin-top: 2rem;
+    }
+    .callout p { margin-bottom: .5rem; }
+    .callout .phone { font-size: 1.25rem; font-weight: bold; }
+    .form-container {
+      flex: 1 1 400px;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    form h2 { grid-column: 1 / -1; font-size: 1.5rem; margin-bottom: 1rem; }
+    label { display: block; font-size: .9rem; margin-bottom: .25rem; }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid #ccc;
+      border-radius: .25rem;
+    }
+    .full-width { grid-column: 1 / -1; }
+    .radios { display: flex; gap: 1rem; align-items: center; }
+    .services { grid-column: 1 / -1; display: flex; gap: 1rem; }
+    .service { flex: 1; text-align: center; }
+    .service input { margin-top: .5rem; }
+    .consent { grid-column: 1 / -1; margin-top: 1rem; }
+    button {
+      grid-column: 1 / -1;
+      padding: .75rem;
+      background: #ff6600;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: .25rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover { opacity: .9; }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <a href="/">Home</a>
-    <a href="/services.html">Services</a>
-    <a href="/about.html">About Us</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>Angebot anfordern</h1>
+      <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus, damit wir uns innerhalb von 60 Minuten bei Ihnen melden können.</p>
+      <div class="callout">
+        <p>Melden Sie sich jederzeit bei uns, wenn Sie beliebige Fragen zu einem Projekt haben.</p>
+        <p class="phone">🇩🇪 +49 800 0007 864</p>
+      </div>
+    </aside>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Book Your Ride Now</h1>
-    <button id="openOverlay">Book Now</button>
-  </section>
+    <section class="form-container">
+      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8">
+        <h2>Art der Anfrage <span style="color:red">*</span></h2>
+        <div class="radios full-width">
+          <label><input type="radio" name="anfrage" value="Unternehmen" required checked> Unternehmen</label>
+          <label><input type="radio" name="anfrage" value="Privat"> Privat</label>
+        </div>
 
-  <!-- Full-screen Booking Overlay -->
-  <div id="bookingOverlay" class="overlay">
-    <div class="overlay-content">
-      <span class="close">&times;</span>
-      <h2>Ride Booking Form</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <label>
-          Pickup Location:
-          <input type="text" name="pickup" required>
+        <label for="name">Vollständiger Name <span style="color:red">*</span></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
+        <select id="branche" name="branche" required>
+          <option value="">Branche des Unternehmens auswählen</option>
+          <option>Behörden / Öffentlicher Dienst</option>
+          <option>Medizin / Gesundheit</option>
+          <option>Justiz / Recht</option>
+          <option>Wirtschaft / Handel</option>
+          <option>Bildung / Schule / Universität</option>
+          <option>Soziales / Sozialarbeit</option>
+          <option>Technik / IT</option>
+          <option>Tourismus / Hotellerie</option>
+          <option>Marketing / Werbung</option>
+          <option>Kultur / Kunst</option>
+          <option>Messen / Veranstaltungen</option>
+          <option>Bauwesen / Architektur</option>
+          <option>Industrie / Produktion</option>
+          <option>Finanzen / Versicherungen</option>
+          <option>Personal / HR</option>
+          <option>Wissenschaft / Forschung</option>
+          <option>Privater Bereich</option>
+          <option>Sonstiges / Anderes</option>
+        </select>
+
+        <label for="email">E-Mail <span style="color:red">*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Telefonnummer <span style="color:red">*</span></label>
+        <div style="display:flex; gap:.5rem;">
+          <select name="countryCode" style="max-width:5rem;">
+            <option value="+49">+49</option>
+            <!-- Sie können hier weitere Ländercodes ergänzen -->
+          </select>
+          <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
+        </div>
+
+        <h2 class="full-width">Welche Dienstleistung benötigen Sie? <span style="color:red">*</span></h2>
+        <div class="services">
+          <div class="service">
+            <!-- Icons können Sie hier als <img> oder SVG einfügen -->
+            <div>📞<br>Telefon-Dolmetschen</div>
+            <input type="radio" name="service" value="Telefon-Dolmetschen" required>
+          </div>
+          <div class="service">
+            <div>🗣️<br>Vor-Ort-Dolmetschen</div>
+            <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
+          </div>
+          <div class="service">
+            <div>🎥<br>Video-Dolmetschen</div>
+            <input type="radio" name="service" value="Video-Dolmetschen">
+          </div>
+        </div>
+
+        <!-- Formspree hidden fields -->
+        <input type="hidden" name="_subject" value="Neue Anfrage via GitHub Pages!">
+        <!-- GDPR Consent -->
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage gespeichert werden. <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
         </label>
-        <label>
-          Drop-off Location:
-          <input type="text" name="dropoff" required>
-        </label>
-        <label>
-          Date & Time:
-          <input type="datetime-local" name="datetime" required>
-        </label>
-        <label>
-          Passenger Name:
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Phone:
-          <input type="tel" name="phone" required>
-        </label>
-        <button type="submit">Submit Booking</button>
+
+        <button type="submit">Anfrage senden</button>
       </form>
-    </div>
+    </section>
   </div>
 
-  <script src="/assets/script.js"></script>
 </body>
 </html>
