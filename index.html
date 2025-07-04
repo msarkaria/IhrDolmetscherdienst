@@ -3,76 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <title>Ihr Dolmetscherdienst</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Professioneller Dolmetscherdienst für Telefon-, Video- und Vor-Ort-Dolmetschen. Fordern Sie jetzt Ihr unverbindliches Angebot an.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: sans-serif; line-height: 1.5; color: #1a1a1a; }
-    .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
-    .sidebar {
+    :root {
+      --brand-blue: #0b1b4f;
+      --accent: #ff6600;
+      --text-color: #1a1a1a;
+      --bg-light: #f9f9f9;
+      --border: #ccc;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+      color: var(--text-color);
+    }
+    header {
+      background: var(--brand-blue);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.25rem;
+      flex: 1;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      text-decoration: underline;
+    }
+
+    main.container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+    aside.sidebar {
       flex: 1 1 300px;
-      background: #0b1b4f;
+      background: var(--brand-blue);
       color: white;
       padding: 2rem;
     }
-    header { background: #0b1b4f; color: white; position: sticky; top: 0; z-index: 10; }
-    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 1rem; }
-    nav .logo { font-weight: bold; font-size: 1.25rem; flex: 1; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav ul li a:hover { text-decoration: underline; }
-
+    .sidebar h1 {
+      margin-bottom: 1rem;
+    }
+    .sidebar p {
+      margin-bottom: 2rem;
+    }
     .callout {
       background: white;
-      color: #0b1b4f;
+      color: var(--brand-blue);
       padding: 1rem;
-      border-radius: .5rem;
-      margin-top: 2rem;
+      border-radius: 0.5rem;
     }
-    .callout p { margin-bottom: .5rem; }
-    .callout .phone { font-size: 1.25rem; font-weight: bold; }
+    .callout p {
+      margin-bottom: 0.5rem;
+    }
+    .callout .phone {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
 
-    /* New utility for two-column rows within form */
-    .form-row {
+    section.form-container {
+      flex: 1 1 400px;
+      padding: 2rem;
+      background: var(--bg-light);
+    }
+    form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-
-    .form-container {
-      flex: 1 1 400px;
-      padding: 2rem;
-      background: #f9f9f9;
+    form h2 {
+      grid-column: 1 / -1;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
-    form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    form h2 { grid-column: 1 / -1; font-size: 1.5rem; margin-bottom: 1rem; }
-    label { display: block; font-size: .9rem; margin-bottom: .25rem; }
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     select,
-    textarea {
+    textarea,
+    input[type="number"],
+    input[type="date"],
+    input[type="time"] {
       width: 100%;
-      padding: .5rem;
-      border: 1px solid #ccc;
-      border-radius: .25rem;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
     }
-    .full-width { grid-column: 1 / -1; }
-    .radios { display: flex; gap: 1rem; align-items: center; }
-    .services { grid-column: 1 / -1; display: flex; gap: 1rem; }
-    .service { flex: 1; text-align: center; }
-    .service input { margin-top: .5rem; }
-    .consent { grid-column: 1 / -1; margin-top: 1rem; }
+    .full-width {
+      grid-column: 1 / -1;
+    }
+    .radios {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .services {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 1rem;
+    }
+    .service {
+      flex: 1;
+      text-align: center;
+    }
+    .service input {
+      margin-top: 0.5rem;
+    }
+    .consent {
+      grid-column: 1 / -1;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
     button {
       grid-column: 1 / -1;
-      padding: .75rem;
-      background: #ff6600;
+      padding: 0.75rem;
+      background: var(--accent);
       border: none;
       color: white;
       font-size: 1rem;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       cursor: pointer;
       margin-top: 1rem;
     }
-    button:hover { opacity: .9; }
+    button:hover,
+    button:focus {
+      opacity: 0.9;
+    }
+
+    /* Responsive: single-column on small screens */
+    @media (max-width: 640px) {
+      form,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -88,181 +183,194 @@
       </ul>
     </nav>
   </header>
-  <div class="container">
+
+  <!-- Placeholder sections for nav anchors -->
+  <section id="leistungen" class="content-section"></section>
+  <section id="sprachen" class="content-section"></section>
+  <section id="branchen" class="content-section"></section>
+  <section id="team" class="content-section"></section>
+
+  <main class="container" id="anfrage">
     <aside class="sidebar">
       <h1>Angebot anfordern</h1>
       <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus, damit wir uns innerhalb von 60 Minuten bei Ihnen melden können.</p>
       <div class="callout">
-        <p>Melden Sie sich jederzeit bei uns, wenn Sie beliebige Fragen zu einem Projekt haben.</p>
+        <p>Melden Sie sich jederzeit bei uns, wenn Sie Fragen zu einem Projekt haben.</p>
         <p class="phone">🇩🇪 +49 800 0007 864</p>
       </div>
     </aside>
+
     <section class="form-container">
-      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8">
-        <h2>Art der Anfrage <span style="color:red">*</span></h2>
-        <div id="customer-data">
-        <div class="radios full-width">
-          <label><input type="radio" name="anfrage" value="Unternehmen" required checked> Unternehmen</label>
-          <label><input type="radio" name="anfrage" value="Privat"> Privat</label>
-        </div>
+      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8" novalidate>
+        <h2>1. Kundendaten</h2>
+
+        <fieldset class="full-width">
+          <legend>Art der Anfrage <span aria-hidden="true" style="color:red">*</span></legend>
+          <div class="radios">
+            <label>
+              <input type="radio" name="anfrage" value="Unternehmen" required checked>
+              Unternehmen
+            </label>
+            <label>
+              <input type="radio" name="anfrage" value="Privat">
+              Privat
+            </label>
+          </div>
+        </fieldset>
+
         <div class="full-width">
-          <label for="name">Vollständiger Name <span style="color:red">*</span></label>
+          <label for="name">Vollständiger Name <span style="color:red" aria-hidden="true">*</span></label>
           <input type="text" id="name" name="name" required>
         </div>
-       
 
-        <!-- Company & Branch in one row -->
         <div id="companyFields" class="form-row full-width">
           <div>
-            <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
+            <label for="company">Name des Unternehmens <span style="color:red" aria-hidden="true">*</span></label>
             <input type="text" id="company" name="company" required>
           </div>
           <div>
-            <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
+            <label for="branche">Unternehmensbranche <span style="color:red" aria-hidden="true">*</span></label>
             <select id="branche" name="branche" required>
               <option value="">Branche des Unternehmens auswählen</option>
               <option>Behörden / Öffentlicher Dienst</option>
-              <!-- ...weitere Optionen... -->
+              <option>Medizin / Gesundheit</option>
+              <option>Justiz / Recht</option>
+              <option>Wirtschaft / Handel</option>
+              <option>Bildung / Schule / Universität</option>
+              <option>Soziales / Sozialarbeit</option>
+              <option>Technik / IT</option>
+              <option>Tourismus / Hotellerie</option>
+              <option>Marketing / Werbung</option>
+              <option>Kultur / Kunst</option>
+              <option>Messen / Veranstaltungen</option>
+              <option>Bauwesen / Architektur</option>
+              <option>Industrie / Produktion</option>
+              <option>Finanzen / Versicherungen</option>
+              <option>Personal / HR</option>
+              <option>Wissenschaft / Forschung</option>
+              <option>Privater Bereich</option>
+              <option>Sonstiges / Anderes</option>
+              <!-- weitere Optionen… -->
             </select>
           </div>
         </div>
 
-        <!-- E-Mail & Telefon in one row -->
         <div class="form-row full-width">
           <div>
-            <label for="email">E-Mail <span style="color:red">*</span></label>
+            <label for="email">E-Mail <span style="color:red" aria-hidden="true">*</span></label>
             <input type="email" id="email" name="email" required>
           </div>
           <div>
-            <label for="phone">Telefonnummer <span style="color:red">*</span></label>
-            <div style="display:flex; gap:.5rem;">
-              <select name="countryCode" style="max-width:5rem;">
+            <label for="phone">Telefonnummer <span style="color:red" aria-hidden="true">*</span></label>
+            <div style="display:flex; gap:0.5rem;">
+              <select name="countryCode" aria-label="Ländervorwahl">
                 <option value="+49">+49</option>
                 <!-- weitere Ländercodes -->
               </select>
-              <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
+              <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer" pattern="[\d+\-\s]+" title="Telefonnummer eingeben">
             </div>
           </div>
         </div>
 
-        <h2 class="full-width">Welche Dienstleistung benötigen Sie? <span style="color:red">*</span></h2>
-        <div class="services">
-          <div class="service">
-            <div>📞<br>Telefon-Dolmetschen</div>
-            <input type="radio" name="service" value="Telefon-Dolmetschen" required>
-          </div>
-          <div class="service">
-            <div>🗣️<br>Vor-Ort-Dolmetschen</div>
-            <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
-          </div>
-          <div class="service">
-            <div>🎥<br>Video-Dolmetschen</div>
-            <input type="radio" name="service" value="Video-Dolmetschen">
+        <button type="button" id="weiter">Weiter</button>
+
+        <div id="translator-data" class="hidden" aria-hidden="true">
+          <h2>2. Dolmetsch-Details</h2>
+          
+          <label for="projekt_sprache">Ausgangs-/Projekt-Sprache <span style="color:red" aria-hidden="true">*</span></label>
+          <select id="projekt_sprache" name="projekt_sprache" required>
+            <option value="">– wählen –</option>
+            <option>Deutsch</option>
+            <option>Englisch</option>
+            <option>Hindi</option>
+            <option>Urdu</option>
+            <option>Punjabi</option>
+            <option>Bengali</option>
+            <option>Arabisch</option>
+          </select>
+
+          <label for="ziel_sprachen">Ziel-Sprache(n) (mehrfach) <span style="color:red" aria-hidden="true">*</span></label>
+          <select id="ziel_sprachen" name="ziel_sprachen[]" multiple required>
+            <option>Deutsch</option>
+            <option>Englisch</option>
+            <option>Hindi</option>
+            <option>Urdu</option>
+            <option>Punjabi</option>
+            <option>Bengali</option>
+            <option>Arabisch</option>
+          </select>
+
+          <fieldset class="full-width">
+            <legend>Welche Dienstleistung benötigen Sie? <span aria-hidden="true" style="color:red">*</span></legend>
+            <div class="services" role="radiogroup" aria-required="true">
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">📞</span><br>
+                <span class="visually-hidden">Telefon-Dolmetschen</span>
+                <input type="radio" name="service" value="Telefon-Dolmetschen" required>
+              </div>
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">🗣️</span><br>
+                <span class="visually-hidden">Vor-Ort-Dolmetschen</span>
+                <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
+              </div>
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">🎥</span><br>
+                <span class="visually-hidden">Video-Dolmetschen</span>
+                <input type="radio" name="service" value="Video-Dolmetschen">
+              </div>
+            </div>
+          </fieldset>
+
+          <label class="consent">
+            <input type="checkbox" name="consent2" required>
+            Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.  
+            <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
+          </label>
+
+          <input type="hidden" name="_subject" value="Neue Dolmetsch-Anfrage">
+
+          <div class="buttons full-width" style="display:flex; gap:1rem; margin-top:1rem;">
+            <button type="button" id="prev2">← Zurück</button>
+            <button type="submit">Anfrage absenden</button>
           </div>
         </div>
-
-        <label class="consent">
-          <input type="checkbox" name="consent" required>
-          Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage gespeichert werden. <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
-        </label>
-        <button onclick="translator" >Weiter</button>
-        </div>
-
-         <div id="translator-data" style='display:none'>
-           <h2>2. Dolmetsch-Details</h2>
-
-        <label for="projekt_sprache">Ausgangs-/Projekt-Sprache *</label>
-        <select id="projekt_sprache" name="projekt_sprache" required>
-          <option value="">– wählen –</option>
-          <option>Deutsch</option>
-          <option>Englisch</option>
-          <option>Hindi</option>
-          <option>Urdu</option>
-          <option>Punjabi</option>
-          <option>Bengali</option>
-          <option>Arabisch</option>
-        </select>
-
-        <label for="ziel_sprachen">Ziel-Sprache(n) (mehrfach) *</label>
-        <select id="ziel_sprachen" name="ziel_sprachen[]" multiple required>
-          <option>Deutsch</option>
-          <option>Englisch</option>
-          <option>Hindi</option>
-          <option>Urdu</option>
-          <option>Punjabi</option>
-          <option>Bengali</option>
-          <option>Arabisch</option>
-        </select>
-
-        <label for="dienstleistungs_art">Art der Dienstleistung *</label>
-        <select id="dienstleistungs_art" name="dienstleistungs_art" required>
-          <option value="">– wählen –</option>
-          <option>Telefon-Dolmetschen</option>
-          <option>Vor-Ort-Dolmetschen</option>
-          <option>Video-Dolmetschen</option>
-        </select>
-
-        <label for="startdatum">Startdatum *</label>
-        <input type="date" id="startdatum" name="startdatum" required>
-
-        <label for="enddatum">Enddatum *</label>
-        <input type="date" id="enddatum" name="enddatum" required>
-
-        <label for="uhrzeit_von">Uhrzeit von *</label>
-        <input type="time" id="uhrzeit_von" name="uhrzeit_von" required>
-
-        <label for="uhrzeit_bis">Uhrzeit bis *</label>
-        <input type="time" id="uhrzeit_bis" name="uhrzeit_bis" required>
-
-        <label for="anzahl_dolmetscher">Anzahl der Dolmetscher *</label>
-        <input type="number" id="anzahl_dolmetscher" name="anzahl_dolmetscher"
-               min="1" max="100" required>
-
-        <label for="ort">Ort *</label>
-        <input type="text" id="ort" name="ort" required placeholder="Ihre Location">
-
-        <label for="veranstaltungstyp">Veranstaltungstyp *</label>
-        <input type="text" id="veranstaltungstyp" name="veranstaltungstyp"
-               required placeholder="z. B. Konferenz">
-
-        <!-- GDPR Consent + hidden Formspree fields -->
-        <label class="consent">
-          <input type="checkbox" name="consent" required>
-          Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.  
-          <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
-        </label>
-        <input type="hidden" name="_subject" value="Neue Dolmetsch-Anfrage">
-
-        <div class="buttons">
-          <button type="button" id="prev2">← Zurück</button>
-          <button type="submit">Anfrage absenden</button>
-        </div>
-          </div>
-           
       </form>
     </section>
-  </div>
-  <script>
-    const radios = document.querySelectorAll('input[name="anfrage"]');
-    const comp = document.getElementById('companyFields');
-    radios.forEach(r => r.addEventListener('change', e => {
-      if (e.target.value === 'Privat') {
-        comp.style.display = 'none';
-        comp.querySelectorAll('input, select').forEach(f => f.removeAttribute('required'));
-      } else {
-        comp.style.display = 'grid';
-        comp.querySelectorAll('input, select').forEach(f => f.setAttribute('required',''));
-      }
-    }));
-    // init
-    if (document.querySelector('input[name="anfrage"]:checked').value === 'Privat') {
-      comp.style.display = 'none';
-    }
+  </main>
 
-    function translator(){
-      document.getElementById('customer-data').style.display = 'none'
-      document.getElementById('translator-data').style.display = 'block'
-    }
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const radios = document.querySelectorAll('input[name="anfrage"]');
+      const comp = document.getElementById('companyFields');
+      const weiterBtn = document.getElementById('weiter');
+      const step2 = document.getElementById('translator-data');
+      const prev2 = document.getElementById('prev2');
+
+      function toggleCompanyFields() {
+        const isPrivat = document.querySelector('input[name="anfrage"]:checked').value === 'Privat';
+        comp.style.display = isPrivat ? 'none' : 'grid';
+        comp.querySelectorAll('input, select').forEach(f => {
+          if (isPrivat) f.removeAttribute('required');
+          else f.setAttribute('required', '');
+        });
+      }
+
+      radios.forEach(r => r.addEventListener('change', toggleCompanyFields));
+      toggleCompanyFields();
+
+      weiterBtn.addEventListener('click', function() {
+        document.querySelector('.form-container form fieldset').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('#customer-data')?.classList?.add('hidden');
+        step2.classList.remove('hidden');
+        step2.setAttribute('aria-hidden', 'false');
+      });
+
+      prev2.addEventListener('click', function() {
+        step2.classList.add('hidden');
+        step2.setAttribute('aria-hidden', 'true');
+        document.querySelector('#customer-data')?.classList?.remove('hidden');
+      });
+    });
   </script>
 </body>
 </html>
