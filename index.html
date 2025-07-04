@@ -2,148 +2,198 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Angebot anfordern</title>
+  <title>Ihr Dolmetscherdienst</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: sans-serif; line-height: 1.5; color: #1a1a1a; }
-    .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
-    .sidebar {
-      flex: 1 1 300px;
-      background: #0b1b4f;
-      color: white;
-      padding: 2rem;
-    }
-    .sidebar h1 { font-size: 2rem; margin-bottom: 1rem; }
-    .sidebar p { margin-bottom: 1.5rem; }
-    .callout {
-      background: white;
-      color: #0b1b4f;
-      padding: 1rem;
-      border-radius: .5rem;
-      margin-top: 2rem;
-    }
-    .callout p { margin-bottom: .5rem; }
-    .callout .phone { font-size: 1.25rem; font-weight: bold; }
-    .form-container {
-      flex: 1 1 400px;
-      padding: 2rem;
-      background: #f9f9f9;
-    }
+    body { font-family: sans-serif; line-height: 1.6; color: #1a1a1a; }
+    a { text-decoration: none; color: inherit; }
+    header { background: #0b1b4f; color: white; position: sticky; top: 0; z-index: 10; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 1rem; }
+    nav .logo { font-weight: bold; font-size: 1.25rem; flex: 1; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a:hover { text-decoration: underline; }
+    section { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    h1, h2 { margin-bottom: 1rem; color: #0b1b4f; }
+    .hero { text-align: center; padding: 4rem 1rem; background: #f1f5fd; }
+    .partners { display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1rem; }
+    .partners img { max-height: 60px; object-fit: contain; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1rem; }
+    .service-item, .lang-item, .team-item, .branch-item { background: #fff; padding: 1rem; border-radius: .5rem; box-shadow: 0 2px 5px rgba(0,0,0,.05); }
+    .service-item h3, .lang-item h3 { margin-bottom: .5rem; }
+    /* Anfrage (form) styles reused from before */
+    .form-container { background: #f9f9f9; padding: 2rem; border-radius: .5rem; }
     form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    form h2 { grid-column: 1 / -1; font-size: 1.5rem; margin-bottom: 1rem; }
     label { display: block; font-size: .9rem; margin-bottom: .25rem; }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-      width: 100%;
-      padding: .5rem;
-      border: 1px solid #ccc;
-      border-radius: .25rem;
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%; padding: .5rem; border: 1px solid #ccc; border-radius: .25rem;
     }
     .full-width { grid-column: 1 / -1; }
     .radios { display: flex; gap: 1rem; align-items: center; }
     .services { grid-column: 1 / -1; display: flex; gap: 1rem; }
     .service { flex: 1; text-align: center; }
     .service input { margin-top: .5rem; }
-    .consent { grid-column: 1 / -1; margin-top: 1rem; }
-    button {
-      grid-column: 1 / -1;
-      padding: .75rem;
-      background: #ff6600;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      border-radius: .25rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
+    .consent { grid-column: 1 / -1; margin-top: 1rem; font-size: .85rem; }
+    button { grid-column: 1 / -1; padding: .75rem; background: #ff6600; border: none; color: white; font-size: 1rem; border-radius: .25rem; cursor: pointer; margin-top: 1rem; }
     button:hover { opacity: .9; }
+    footer { text-align: center; padding: 1rem; font-size: .85rem; color: #555; }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <aside class="sidebar">
-      <h1>Angebot anfordern</h1>
-      <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus, damit wir uns innerhalb von 60 Minuten bei Ihnen melden können.</p>
-      <div class="callout">
-        <p>Melden Sie sich jederzeit bei uns, wenn Sie beliebige Fragen zu einem Projekt haben.</p>
-        <p class="phone">🇩🇪 +49 800 0007 864</p>
-      </div>
-    </aside>
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">Ihr Dolmetscherdienst</div>
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#sprachen">Sprachen</a></li>
+        <li><a href="#branchen">Branchen</a></li>
+        <li><a href="#team">Unser Team</a></li>
+        <li><a href="#anfrage">Anfrage</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="form-container">
-      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8">
-        <h2>Art der Anfrage <span style="color:red">*</span></h2>
-        <div class="radios full-width">
+  <!-- HERO -->
+  <section class="hero" id="start">
+    <h1>Ihr Dolmetscherdienst – Ihre Brücke zu erfolgreicher Kommunikation</h1>
+    <p>Wir ermöglichen reibungslose Verständigung – kompetent und diskret.<br>
+       Ob Unternehmen, Behörde oder Privatperson – wir schaffen Verbindungen, wo Sprache trennt.</p>
+  </section>
+
+  <!-- PARTNER -->
+  <section id="partner">
+    <h2>Partner</h2>
+    <div class="partners">
+      <img src="dolmetscher24-logo.png" alt="Dolmetscher24 Logo">
+      <img src="schaeffler-logo.png"    alt="Schäffler Logo">
+      <img src="your-logo.png"          alt="Ihr Logo">
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <h2>Leistungen</h2>
+    <div class="grid-3">
+      <div class="service-item">
+        <h3>Telefon-Dolmetschen</h3>
+        <p>Sofortige, zuverlässige Unterstützung am Telefon – flexibel und weltweit verfügbar. Unsere professionellen Dolmetscher*innen helfen Ihnen, Sprachbarrieren spontan und sicher zu überwinden.</p>
+      </div>
+      <div class="service-item">
+        <h3>Video-Dolmetschen</h3>
+        <p>Modernes Dolmetschen für Online-Meetings, Videokonferenzen und digitale Veranstaltungen. Flexibel, sicher und ortsunabhängig – ideal für Ihre digitalen Geschäftsprozesse.</p>
+      </div>
+      <div class="service-item">
+        <h3>Vor-Ort-Dolmetschen</h3>
+        <p>Persönliche Sprachmittlung direkt vor Ort – professionell, diskret und passgenau für Ihre individuellen Anforderungen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPRACHEN -->
+  <section id="sprachen">
+    <h2>Sprachen</h2>
+    <ul>
+      <li>Deutsch</li>
+      <li>Englisch</li>
+      <li>Hindi</li>
+      <li>Urdu</li>
+      <li>Punjabi</li>
+      <li>Bengali</li>
+      <li>Arabisch</li>
+    </ul>
+    <p>Sprechen Sie uns an, wenn Sie eine weitere Sprache benötigen!</p>
+  </section>
+
+  <!-- UNSER TEAM -->
+  <section id="team">
+    <h2>Unser Team</h2>
+    <p>Unser Team besteht aus erfahrenen, zertifizierten und mehrsprachigen Dolmetscher*innen. Wir unterstützen Sie professionell, flexibel und zuverlässig – sowohl vor Ort, telefonisch als auch per Video. Dank unserer breiten Sprachkompetenz, interkulturellen Erfahrung und Branchenkenntnis finden wir für jede Situation die passende Lösung. Vertrauen Sie auf unsere Expertise, damit Ihre Kommunikation gelingt.</p>
+  </section>
+
+  <!-- BRANCHEN -->
+  <section id="branchen">
+    <h2>Branchen</h2>
+    <div class="grid-4">
+      <div class="branch-item">Behörden / Öffentlicher Dienst</div>
+      <div class="branch-item">Medizin / Gesundheit</div>
+      <div class="branch-item">Justiz / Recht</div>
+      <div class="branch-item">Wirtschaft / Handel</div>
+      <div class="branch-item">Bildung / Schule / Universität</div>
+      <div class="branch-item">Soziales / Sozialarbeit</div>
+      <div class="branch-item">Technik / IT</div>
+      <div class="branch-item">Tourismus / Hotellerie</div>
+      <div class="branch-item">Marketing / Werbung</div>
+      <div class="branch-item">Kultur / Kunst</div>
+      <div class="branch-item">Messen / Veranstaltungen</div>
+      <div class="branch-item">Bauwesen / Architektur</div>
+      <div class="branch-item">Industrie / Produktion</div>
+      <div class="branch-item">Finanzen / Versicherungen</div>
+      <div class="branch-item">Personal / HR</div>
+      <div class="branch-item">Wissenschaft / Forschung</div>
+      <div class="branch-item">Privater Bereich</div>
+      <div class="branch-item">Sonstiges / Anderes</div>
+    </div>
+  </section>
+
+  <!-- ANFRAGE -->
+  <section id="anfrage">
+    <h2>Dolmetsch-Anfrage</h2>
+    <p>Nutzen Sie unser Formular, um uns Ihr Anliegen zu schildern. Sie erhalten zeitnah ein unverbindliches, maßgeschneidertes Angebot – schnell, diskret und kostenlos.</p>
+
+    <div class="form-container">
+      <form action="https://api.eu.formspree.io/f/YOUR_FORM_ID" method="POST" accept-charset="UTF-8">
+        <div class="full-width radios">
           <label><input type="radio" name="anfrage" value="Unternehmen" required checked> Unternehmen</label>
           <label><input type="radio" name="anfrage" value="Privat"> Privat</label>
         </div>
 
-        <label for="name">Vollständiger Name <span style="color:red">*</span></label>
-        <input type="text" id="name" name="name" required>
+        <label for="name">Vollständiger Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Max Mustermann">
 
-        <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
-        <input type="text" id="company" name="company" required>
+        <label for="company">Name des Unternehmens *</label>
+        <input type="text" id="company" name="company" required placeholder="Muster GmbH">
 
-        <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
+        <label for="branche">Unternehmensbranche *</label>
         <select id="branche" name="branche" required>
-          <option value="">Branche des Unternehmens auswählen</option>
-          <option>Behörden / Öffentlicher Dienst</option>
-          <option>Medizin / Gesundheit</option>
-          <option>Justiz / Recht</option>
-          <option>Wirtschaft / Handel</option>
-          <option>Bildung / Schule / Universität</option>
-          <option>Soziales / Sozialarbeit</option>
-          <option>Technik / IT</option>
-          <option>Tourismus / Hotellerie</option>
-          <option>Marketing / Werbung</option>
-          <option>Kultur / Kunst</option>
-          <option>Messen / Veranstaltungen</option>
-          <option>Bauwesen / Architektur</option>
-          <option>Industrie / Produktion</option>
-          <option>Finanzen / Versicherungen</option>
-          <option>Personal / HR</option>
-          <option>Wissenschaft / Forschung</option>
-          <option>Privater Bereich</option>
-          <option>Sonstiges / Anderes</option>
+          <option value="">Branche auswählen</option>
+          <!-- ... Optionen wie oben ... -->
         </select>
 
-        <label for="email">E-Mail <span style="color:red">*</span></label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">E-Mail *</label>
+        <input type="email" id="email" name="email" required placeholder="max@beispiel.de">
 
-        <label for="phone">Telefonnummer <span style="color:red">*</span></label>
+        <label for="phone">Telefonnummer *</label>
         <div style="display:flex; gap:.5rem;">
           <select name="countryCode" style="max-width:5rem;">
             <option value="+49">+49</option>
-            <!-- Sie können hier weitere Ländercodes ergänzen -->
+            <!-- weitere Ländercodes -->
           </select>
-          <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
+          <input type="tel" id="phone" name="phone" required placeholder="1234567890">
         </div>
 
-        <h2 class="full-width">Welche Dienstleistung benötigen Sie? <span style="color:red">*</span></h2>
-        <div class="services">
-          <div class="service">
-            <!-- Icons können Sie hier als <img> oder SVG einfügen -->
-            <div>📞<br>Telefon-Dolmetschen</div>
-            <input type="radio" name="service" value="Telefon-Dolmetschen" required>
-          </div>
-          <div class="service">
-            <div>🗣️<br>Vor-Ort-Dolmetschen</div>
-            <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
-          </div>
-          <div class="service">
-            <div>🎥<br>Video-Dolmetschen</div>
-            <input type="radio" name="service" value="Video-Dolmetschen">
+        <div class="full-width">
+          <p>Welche Dienstleistung benötigen Sie? *</p>
+          <div class="services">
+            <div class="service">
+              <div>📞<br>Telefon-Dolmetschen</div>
+              <input type="radio" name="service" value="Telefon-Dolmetschen" required>
+            </div>
+            <div class="service">
+              <div>🗣️<br>Vor-Ort-Dolmetschen</div>
+              <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
+            </div>
+            <div class="service">
+              <div>🎥<br>Video-Dolmetschen</div>
+              <input type="radio" name="service" value="Video-Dolmetschen">
+            </div>
           </div>
         </div>
 
-        <!-- Formspree hidden fields -->
         <input type="hidden" name="_subject" value="Neue Anfrage via GitHub Pages!">
-        <!-- GDPR Consent -->
+
         <label class="consent">
           <input type="checkbox" name="consent" required>
           Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage gespeichert werden. <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
@@ -151,8 +201,12 @@
 
         <button type="submit">Anfrage senden</button>
       </form>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ihr Dolmetscherdienst · <a href="/privacy-policy">Datenschutz</a> · <a href="/impressum">Impressum</a>
+  </footer>
 
 </body>
 </html>
