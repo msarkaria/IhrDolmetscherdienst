@@ -173,6 +173,27 @@
           </div>
         </div>
 
+        <fieldset class="full-width">
+            <legend>Welche Dienstleistung benötigen Sie? <span aria-hidden="true" style="color:red">*</span></legend>
+            <div class="services" role="radiogroup" aria-required="true">
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">📞</span><br>
+                <span class="visually-hidden">Telefon-Dolmetschen</span>
+                <input type="radio" name="service" value="Telefon-Dolmetschen" required>
+              </div>
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">🗣️</span><br>
+                <span class="visually-hidden">Vor-Ort-Dolmetschen</span>
+                <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
+              </div>
+              <div class="service" role="radio" aria-checked="false" tabindex="0">
+                <span aria-hidden="true">🎥</span><br>
+                <span class="visually-hidden">Video-Dolmetschen</span>
+                <input type="radio" name="service" value="Video-Dolmetschen">
+              </div>
+            </div>
+          </fieldset>
+
         <button type="button" id="weiter">Weiter</button>
 
         <!-- Step 2: Dolmetsch-Details -->
