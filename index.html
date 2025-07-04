@@ -13,160 +13,38 @@
       --bg-light: #f9f9f9;
       --border: #ccc;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: sans-serif;
-      line-height: 1.5;
-      color: var(--text-color);
-    }
-    header {
-      background: var(--brand-blue);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-    }
-    .logo {
-      font-weight: bold;
-      font-size: 1.25rem;
-      flex: 1;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-    }
-    nav ul li a:hover,
-    nav ul li a:focus {
-      text-decoration: underline;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; line-height: 1.5; color: var(--text-color); }
+    header { background: var(--brand-blue); color: white; position: sticky; top: 0; z-index: 10; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 1rem; }
+    .logo { font-weight: bold; font-size: 1.25rem; flex: 1; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a { color: white; text-decoration: none; }
+    nav ul li a:hover, nav ul li a:focus { text-decoration: underline; }
 
-    main.container {
-      display: flex;
-      flex-wrap: wrap;
-      min-height: 100vh;
-    }
-    aside.sidebar {
-      flex: 1 1 300px;
-      background: var(--brand-blue);
-      color: white;
-      padding: 2rem;
-    }
-    .sidebar h1 {
-      margin-bottom: 1rem;
-    }
-    .sidebar p {
-      margin-bottom: 2rem;
-    }
-    .callout {
-      background: white;
-      color: var(--brand-blue);
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
-    .callout p {
-      margin-bottom: 0.5rem;
-    }
-    .callout .phone {
-      font-size: 1.25rem;
-      font-weight: bold;
-    }
+    .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
+    .sidebar { flex: 1 1 300px; background: var(--brand-blue); color: white; padding: 2rem; }
+    .sidebar h1 { margin-bottom: 1rem; }
+    .sidebar p { margin-bottom: 2rem; }
+    .callout { background: white; color: var(--brand-blue); padding: 1rem; border-radius: .5rem; }
+    .callout p { margin-bottom: .5rem; }
+    .callout .phone { font-size: 1.25rem; font-weight: bold; }
 
-    section.form-container {
-      flex: 1 1 400px;
-      padding: 2rem;
-      background: var(--bg-light);
-    }
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    form h2 {
-      grid-column: 1 / -1;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    label {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea,
-    input[type="number"],
-    input[type="date"],
-    input[type="time"] {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 0.25rem;
-    }
-    .full-width {
-      grid-column: 1 / -1;
-    }
-    .radios {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    .services {
-      grid-column: 1 / -1;
-      display: flex;
-      gap: 1rem;
-    }
-    .service {
-      flex: 1;
-      text-align: center;
-    }
-    .service input {
-      margin-top: 0.5rem;
-    }
-    .consent {
-      grid-column: 1 / -1;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-    }
-    button {
-      grid-column: 1 / -1;
-      padding: 0.75rem;
-      background: var(--accent);
-      border: none;
-      color: white;
-      font-size: 1rem;
-      border-radius: 0.25rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    button:hover,
-    button:focus {
-      opacity: 0.9;
-    }
+    .form-container { flex: 1 1 400px; padding: 2rem; background: var(--bg-light); }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    h2 { grid-column: 1 / -1; font-size: 1.5rem; margin-bottom: 1rem; }
+    label { display: block; font-size: .9rem; margin-bottom: .25rem; }
+    input, select { width: 100%; padding: .5rem; border: 1px solid var(--border); border-radius: .25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .full-width { grid-column: 1 / -1; }
+    .radios { display: flex; gap: 1rem; align-items: center; }
+    button { grid-column: 1 / -1; padding: .75rem; background: var(--accent); border: none; color: white; font-size: 1rem; border-radius: .25rem; cursor: pointer; }
+    button:hover, button:focus { opacity: .9; }
 
-    /* Responsive: single-column on small screens */
+    .hidden { display: none; }
+
     @media (max-width: 640px) {
-      form,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      form, .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -184,191 +62,128 @@
     </nav>
   </header>
 
-  <!-- Placeholder sections for nav anchors -->
-  <section id="leistungen" class="content-section"></section>
-  <section id="sprachen" class="content-section"></section>
-  <section id="branchen" class="content-section"></section>
-  <section id="team" class="content-section"></section>
-
   <main class="container" id="anfrage">
     <aside class="sidebar">
       <h1>Angebot anfordern</h1>
-      <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus, damit wir uns innerhalb von 60 Minuten bei Ihnen melden können.</p>
+      <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus.</p>
       <div class="callout">
-        <p>Melden Sie sich jederzeit bei uns, wenn Sie Fragen zu einem Projekt haben.</p>
+        <p>Bei Fragen erreichen Sie uns:</p>
         <p class="phone">🇩🇪 +49 800 0007 864</p>
       </div>
     </aside>
 
     <section class="form-container">
-      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8" novalidate>
-        <h2>1. Kundendaten</h2>
+      <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" novalidate>
 
+        <!-- Step 1: Anfrage + Kontakt -->
+        <h2>Art der Anfrage <span style="color:red">*</span></h2>
         <fieldset class="full-width">
-          <legend>Art der Anfrage <span aria-hidden="true" style="color:red">*</span></legend>
+          <legend class="visually-hidden">Art der Anfrage</legend>
           <div class="radios">
-            <label>
-              <input type="radio" name="anfrage" value="Unternehmen" required checked>
-              Unternehmen
-            </label>
-            <label>
-              <input type="radio" name="anfrage" value="Privat">
-              Privat
-            </label>
+            <label><input type="radio" name="anfrage" value="Unternehmen" checked required> Unternehmen</label>
+            <label><input type="radio" name="anfrage" value="Privat"> Privat</label>
           </div>
         </fieldset>
 
-        <div class="full-width">
-          <label for="name">Vollständiger Name <span style="color:red" aria-hidden="true">*</span></label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div id="companyFields" class="form-row full-width">
+        <div class="full-width form-row">
           <div>
-            <label for="company">Name des Unternehmens <span style="color:red" aria-hidden="true">*</span></label>
+            <label for="company">Name des Unternehmens <span style="color:red">*</span></label>
             <input type="text" id="company" name="company" required>
           </div>
           <div>
-            <label for="branche">Unternehmensbranche <span style="color:red" aria-hidden="true">*</span></label>
+            <label for="branche">Unternehmensbranche <span style="color:red">*</span></label>
             <select id="branche" name="branche" required>
-              <option value="">Branche des Unternehmens auswählen</option>
+              <option value="">Branche auswählen</option>
               <option>Behörden / Öffentlicher Dienst</option>
               <option>Medizin / Gesundheit</option>
-              <option>Justiz / Recht</option>
-              <option>Wirtschaft / Handel</option>
-              <option>Bildung / Schule / Universität</option>
-              <option>Soziales / Sozialarbeit</option>
-              <option>Technik / IT</option>
-              <option>Tourismus / Hotellerie</option>
-              <option>Marketing / Werbung</option>
-              <option>Kultur / Kunst</option>
-              <option>Messen / Veranstaltungen</option>
-              <option>Bauwesen / Architektur</option>
-              <option>Industrie / Produktion</option>
-              <option>Finanzen / Versicherungen</option>
-              <option>Personal / HR</option>
-              <option>Wissenschaft / Forschung</option>
-              <option>Privater Bereich</option>
-              <option>Sonstiges / Anderes</option>
-              <!-- weitere Optionen… -->
+              <option>Bildung / Forschung</option>
             </select>
           </div>
         </div>
 
-        <div class="form-row full-width">
+        <div class="full-width form-row">
           <div>
-            <label for="email">E-Mail <span style="color:red" aria-hidden="true">*</span></label>
+            <label for="email">E-Mail <span style="color:red">*</span></label>
             <input type="email" id="email" name="email" required>
           </div>
           <div>
-            <label for="phone">Telefonnummer <span style="color:red" aria-hidden="true">*</span></label>
-            <div style="display:flex; gap:0.5rem;">
+            <label for="phone">Telefon <span style="color:red">*</span></label>
+            <div style="display:flex; gap:.5rem;">
               <select name="countryCode" aria-label="Ländervorwahl">
                 <option value="+49">+49</option>
-                <!-- weitere Ländercodes -->
               </select>
-              <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer" pattern="[\d+\-\s]+" title="Telefonnummer eingeben">
+              <input type="tel" id="phone" name="phone" required placeholder="Ihre Nummer">
             </div>
           </div>
         </div>
 
         <button type="button" id="weiter">Weiter</button>
 
-        <div id="translator-data" class="hidden" aria-hidden="true">
-          <h2>2. Dolmetsch-Details</h2>
-          
-          <label for="projekt_sprache">Ausgangs-/Projekt-Sprache <span style="color:red" aria-hidden="true">*</span></label>
+        <!-- Step 2: Dolmetsch-Details -->
+        <div id="translator-data" class="hidden">
+          <h2>Dolmetsch-Details</h2>
+
+          <label for="projekt_sprache">Ausgangssprache <span style="color:red">*</span></label>
           <select id="projekt_sprache" name="projekt_sprache" required>
             <option value="">– wählen –</option>
             <option>Deutsch</option>
             <option>Englisch</option>
-            <option>Hindi</option>
-            <option>Urdu</option>
-            <option>Punjabi</option>
-            <option>Bengali</option>
             <option>Arabisch</option>
           </select>
 
-          <label for="ziel_sprachen">Ziel-Sprache(n) (mehrfach) <span style="color:red" aria-hidden="true">*</span></label>
+          <label for="ziel_sprachen">Zielsprache(n) <span style="color:red">*</span></label>
           <select id="ziel_sprachen" name="ziel_sprachen[]" multiple required>
             <option>Deutsch</option>
             <option>Englisch</option>
-            <option>Hindi</option>
-            <option>Urdu</option>
-            <option>Punjabi</option>
-            <option>Bengali</option>
             <option>Arabisch</option>
           </select>
 
           <fieldset class="full-width">
-            <legend>Welche Dienstleistung benötigen Sie? <span aria-hidden="true" style="color:red">*</span></legend>
-            <div class="services" role="radiogroup" aria-required="true">
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">📞</span><br>
-                <span class="visually-hidden">Telefon-Dolmetschen</span>
-                <input type="radio" name="service" value="Telefon-Dolmetschen" required>
-              </div>
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">🗣️</span><br>
-                <span class="visually-hidden">Vor-Ort-Dolmetschen</span>
-                <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
-              </div>
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">🎥</span><br>
-                <span class="visually-hidden">Video-Dolmetschen</span>
-                <input type="radio" name="service" value="Video-Dolmetschen">
-              </div>
+            <legend>Art der Dienstleistung <span style="color:red">*</span></legend>
+            <div class="radios">
+              <label><input type="radio" name="service" value="Telefon-Dolmetschen" required> Telefon-Dolmetschen</label>
+              <label><input type="radio" name="service" value="Vor-Ort-Dolmetschen"> Vor-Ort-Dolmetschen</label>
+              <label><input type="radio" name="service" value="Video-Dolmetschen"> Video-Dolmetschen</label>
             </div>
           </fieldset>
 
-          <label class="consent">
-            <input type="checkbox" name="consent2" required>
-            Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.  
-            <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
+          <label class="full-width consent">
+            <input type="checkbox" name="consent" required>
+            Ich stimme der <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a> zu.
           </label>
 
-          <input type="hidden" name="_subject" value="Neue Dolmetsch-Anfrage">
-
-          <div class="buttons full-width" style="display:flex; gap:1rem; margin-top:1rem;">
-            <button type="button" id="prev2">← Zurück</button>
+          <div class="full-width" style="display:flex; gap:1rem;">
+            <button type="button" id="prev2">Zurück</button>
             <button type="submit">Anfrage absenden</button>
           </div>
         </div>
+
       </form>
     </section>
   </main>
 
-  <script defer>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const radios = document.querySelectorAll('input[name="anfrage"]');
-      const comp = document.getElementById('companyFields');
+      const compFields = document.getElementById('company');
+      // Toggle company fields based on Anfrage type
+      document.querySelectorAll('input[name="anfrage"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          const isPrivat = document.querySelector('input[name="anfrage"]:checked').value === 'Privat';
+          document.getElementById('company').required = !isPrivat;
+          document.getElementById('branche').required = !isPrivat;
+          document.getElementById('company').parentElement.style.display = isPrivat ? 'none' : '';
+          document.getElementById('branche').parentElement.style.display = isPrivat ? 'none' : '';
+        });
+      });
+
       const weiterBtn = document.getElementById('weiter');
       const step2 = document.getElementById('translator-data');
       const prev2 = document.getElementById('prev2');
-
-      function toggleCompanyFields() {
-        const isPrivat = document.querySelector('input[name="anfrage"]:checked').value === 'Privat';
-        comp.style.display = isPrivat ? 'none' : 'grid';
-        comp.querySelectorAll('input, select').forEach(f => {
-          if (isPrivat) f.removeAttribute('required');
-          else f.setAttribute('required', '');
-        });
-      }
-
-      radios.forEach(r => r.addEventListener('change', toggleCompanyFields));
-      toggleCompanyFields();
-
-      weiterBtn.addEventListener('click', function() {
-        document.querySelector('.form-container form fieldset').scrollIntoView({ behavior: 'smooth' });
-        document.querySelector('#customer-data')?.classList?.add('hidden');
+      weiterBtn.addEventListener('click', () => {
         step2.classList.remove('hidden');
-        step2.setAttribute('aria-hidden', 'false');
       });
-
-      prev2.addEventListener('click', function() {
+      prev2.addEventListener('click', () => {
         step2.classList.add('hidden');
-        step2.setAttribute('aria-hidden', 'true');
-        document.querySelector('#customer-data')?.classList?.remove('hidden');
       });
     });
   </script>
