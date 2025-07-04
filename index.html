@@ -100,6 +100,7 @@
     <section class="form-container">
       <form action="https://api.eu.formspree.io/f/mvgryjaa" method="POST" accept-charset="UTF-8">
         <h2>Art der Anfrage <span style="color:red">*</span></h2>
+        <div id="customer-data">
         <div class="radios full-width">
           <label><input type="radio" name="anfrage" value="Unternehmen" required checked> Unternehmen</label>
           <label><input type="radio" name="anfrage" value="Privat"> Privat</label>
@@ -164,7 +165,80 @@
           <input type="checkbox" name="consent" required>
           Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage gespeichert werden. <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
         </label>
-        <button type="submit">Weiter</button>
+        <button onclick="translator" >Weiter</button>
+        </div>
+
+         <div id="translator-data" style='display:none'>
+           <h2>2. Dolmetsch-Details</h2>
+
+        <label for="projekt_sprache">Ausgangs-/Projekt-Sprache *</label>
+        <select id="projekt_sprache" name="projekt_sprache" required>
+          <option value="">– wählen –</option>
+          <option>Deutsch</option>
+          <option>Englisch</option>
+          <option>Hindi</option>
+          <option>Urdu</option>
+          <option>Punjabi</option>
+          <option>Bengali</option>
+          <option>Arabisch</option>
+        </select>
+
+        <label for="ziel_sprachen">Ziel-Sprache(n) (mehrfach) *</label>
+        <select id="ziel_sprachen" name="ziel_sprachen[]" multiple required>
+          <option>Deutsch</option>
+          <option>Englisch</option>
+          <option>Hindi</option>
+          <option>Urdu</option>
+          <option>Punjabi</option>
+          <option>Bengali</option>
+          <option>Arabisch</option>
+        </select>
+
+        <label for="dienstleistungs_art">Art der Dienstleistung *</label>
+        <select id="dienstleistungs_art" name="dienstleistungs_art" required>
+          <option value="">– wählen –</option>
+          <option>Telefon-Dolmetschen</option>
+          <option>Vor-Ort-Dolmetschen</option>
+          <option>Video-Dolmetschen</option>
+        </select>
+
+        <label for="startdatum">Startdatum *</label>
+        <input type="date" id="startdatum" name="startdatum" required>
+
+        <label for="enddatum">Enddatum *</label>
+        <input type="date" id="enddatum" name="enddatum" required>
+
+        <label for="uhrzeit_von">Uhrzeit von *</label>
+        <input type="time" id="uhrzeit_von" name="uhrzeit_von" required>
+
+        <label for="uhrzeit_bis">Uhrzeit bis *</label>
+        <input type="time" id="uhrzeit_bis" name="uhrzeit_bis" required>
+
+        <label for="anzahl_dolmetscher">Anzahl der Dolmetscher *</label>
+        <input type="number" id="anzahl_dolmetscher" name="anzahl_dolmetscher"
+               min="1" max="100" required>
+
+        <label for="ort">Ort *</label>
+        <input type="text" id="ort" name="ort" required placeholder="Ihre Location">
+
+        <label for="veranstaltungstyp">Veranstaltungstyp *</label>
+        <input type="text" id="veranstaltungstyp" name="veranstaltungstyp"
+               required placeholder="z. B. Konferenz">
+
+        <!-- GDPR Consent + hidden Formspree fields -->
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.  
+          <a href="/privacy-policy" target="_blank">Datenschutzerklärung</a>.
+        </label>
+        <input type="hidden" name="_subject" value="Neue Dolmetsch-Anfrage">
+
+        <div class="buttons">
+          <button type="button" id="prev2">← Zurück</button>
+          <button type="submit">Anfrage absenden</button>
+        </div>
+          </div>
+           
       </form>
     </section>
   </div>
@@ -183,6 +257,11 @@
     // init
     if (document.querySelector('input[name="anfrage"]:checked').value === 'Privat') {
       comp.style.display = 'none';
+    }
+
+    function translator(){
+      document.getElementById('customer-data').style.display = 'none'
+      document.getElementById('translator-data').style.display = 'block'
     }
   </script>
 </body>
