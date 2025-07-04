@@ -74,6 +74,33 @@
       /* take up remaining space */
       flex: 1 1 auto;
     }
+    
+        .services {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .service {
+      flex: 1;                    /* each box takes equal width */
+      display: flex;
+      flex-direction: column;     /* stack children vertically */
+      align-items: center;        /* center everything */
+      text-align: center;
+    }
+    
+    .service .icon {
+      font-size: 2rem;            /* make icon larger if you like */
+      margin-bottom: 0.5rem;
+    }
+    
+    .service .text {
+      margin-bottom: 0.5rem;
+    }
+    
+    .service input {
+      margin-top: auto;           /* push the radio to the bottom */
+    }
   </style>
 </head>
 <body>
@@ -173,26 +200,26 @@
           </div>
         </div>
 
-        <fieldset class="full-width">
-            <legend>Welche Dienstleistung benötigen Sie? <span aria-hidden="true" style="color:red">*</span></legend>
-            <div class="services" role="radiogroup" aria-required="true">
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">📞</span><br>
-                <span class="visually-hidden">Telefon-Dolmetschen</span>
-                <input type="radio" name="service" value="Telefon-Dolmetschen" required>
-              </div>
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">🗣️</span><br>
-                <span class="visually-hidden">Vor-Ort-Dolmetschen</span>
-                <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
-              </div>
-              <div class="service" role="radio" aria-checked="false" tabindex="0">
-                <span aria-hidden="true">🎥</span><br>
-                <span class="visually-hidden">Video-Dolmetschen</span>
-                <input type="radio" name="service" value="Video-Dolmetschen">
-              </div>
-            </div>
-          </fieldset>
+      <fieldset class="full-width">
+        <legend>Welche Dienstleistung benötigen Sie? <span aria-hidden="true" style="color:red">*</span></legend>
+        <div class="services" role="radiogroup" aria-required="true">
+          <div class="service">
+            <span class="icon" aria-hidden="true">📞</span>
+            <span class="text">Telefon-Dolmetschen</span>
+            <input type="radio" name="service" value="Telefon-Dolmetschen" required>
+          </div>
+          <div class="service">
+            <span class="icon" aria-hidden="true">🗣️</span>
+            <span class="text">Vor-Ort-Dolmetschen</span>
+            <input type="radio" name="service" value="Vor-Ort-Dolmetschen">
+          </div>
+          <div class="service">
+            <span class="icon" aria-hidden="true">🎥</span>
+            <span class="text">Video-Dolmetschen</span>
+            <input type="radio" name="service" value="Video-Dolmetschen">
+          </div>
+        </div>
+      </fieldset>
 
         <button type="button" id="weiter">Weiter</button>
 
