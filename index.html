@@ -172,40 +172,55 @@
     </form>
   </div>
 
-  <script>
-    // simple stepper
-    const step1 = document.getElementById('step-1');
-    const step2 = document.getElementById('step-2');
-    document.getElementById('next1').onclick = () => {
-      // if step1 is valid, go on
-      if (document.getElementById('multiStepForm').checkValidity()) {
-        step1.classList.remove('active');
-        step2.classList.add('active');
-      } else {
-        document.getElementById('multiStepForm').reportValidity();
-      }
-    };
-    document.getElementById('prev2').onclick = () => {
-      step2.classList.remove('active');
-      step1.classList.add('active');
-    };
+ <script>
+  const step1 = document.getElementById('step-1');
+  const step2 = document.getElementById('step-2');
+  const form  = document.getElementById('multiStepForm');
 
-    // show/hide company fields when “Privat” is selected
-    const radios = document.querySelectorAll('input[name="anfrage"]');
-    const comp = document.getElementById('companyFields');
-    radios.forEach(r => r.addEventListener('change', e => {
-      if (e.target.value === 'Privat') {
-        comp.style.display = 'none';
-        comp.querySelectorAll('input, select').forEach(f => f.removeAttribute('required'));
-      } else {
-        comp.style.display = 'block';
-        comp.querySelectorAll('input, select').forEach(f => f.setAttribute('required',''));
+  function validateStep(el) {
+    // find all form controls in this step
+    const controls = Array.from(el.querySelectorAll('input, select, textarea'));
+    for (let c of controls) {
+      // skip non-required or disabled fields
+      if (!c.hasAttribute('required') || c.disabled) continue;
+      if (!c.checkValidity()) {
+        c.reportValidity();
+        return false;
       }
-    }));
-    // init
-    if (document.querySelector('input[name="anfrage"]:checked').value === 'Privat') {
-      comp.style.display = 'none';
     }
-  </script>
+    return true;
+  }
+
+  document.getElementById('next1').addEventListener('click', () => {
+    if (!validateStep(step1)) return;
+    // passed, show step2
+    step1.classList.remove('active');
+    step2.classList.add('active');
+  });
+
+  document.getElementById('prev2').addEventListener('click', () => {
+    step2.classList.remove('active');
+    step1.classList.add('active');
+  });
+
+  // conditional company fields (unchanged)
+  const radios = document.querySelectorAll('input[name="anfrage"]');
+  const comp   = document.getElementById('companyFields');
+  radios.forEach(r => r.addEventListener('change', e => {
+    if (e.target.value === 'Privat') {
+      comp.style.display = 'none';
+      comp.querySelectorAll('input, select')
+          .forEach(f => f.removeAttribute('required'));
+    } else {
+      comp.style.display = 'block';
+      comp.querySelectorAll('input, select')
+          .forEach(f => f.setAttribute('required',''));
+    }
+  }));
+  // init
+  if (document.querySelector('input[name="anfrage"]:checked').value === 'Privat') {
+    comp.style.display = 'none';
+  }
+</script>
 </body>
 </html>
