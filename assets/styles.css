@@ -58,6 +58,19 @@ section { padding:var(--spacing-lg) 0; }
 .features, .portfolio, .testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:var(--spacing-lg); }
 .feature-card { background:#fff; padding:var(--spacing-lg); border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); text-align:center; }
 .feature-icon { width:48px; height:auto; margin-bottom:var(--spacing-sm); }
+
+
+.languages-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  max-width: 400px;
+  margin: var(--spacing-md) auto;
+}
+.languages-list li {
+  margin-bottom: var(--spacing-sm);
+}
+
+
 /* Responsive Breakpoints */
 @media (max-width: 800px) {
   .features, .portfolio, .testimonials { grid-template-columns:1fr; }
