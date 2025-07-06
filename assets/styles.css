@@ -119,11 +119,22 @@ section { padding:var(--spacing-lg) 0; }
   padding-bottom: var(--spacing-lg);
 }
 
+.contact-info{
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+#contact h2,
+#contact > .container > p {
+  color: #fff;
+}
+
 #contact .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
-  align-items: start;
+ 
+  align-items: center;
 }
 
 /* Card containers */
