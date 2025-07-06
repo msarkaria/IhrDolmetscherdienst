@@ -60,14 +60,29 @@ section { padding:var(--spacing-lg) 0; }
 .feature-icon { width:48px; height:auto; margin-bottom:var(--spacing-sm); }
 
 
-.languages-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  max-width: 400px;
-  margin: var(--spacing-md) auto;
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-lg);
+  justify-items: center;
 }
-.languages-list li {
+
+.language-item {
+  background: var(--color-light-bg, #f9f9f9);
+  padding: var(--spacing-md);
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.language-item .flag {
+  font-size: 2rem;
+  display: block;
   margin-bottom: var(--spacing-sm);
+}
+
+.language-item .language-name {
+  font-weight: 600;
 }
 
 
