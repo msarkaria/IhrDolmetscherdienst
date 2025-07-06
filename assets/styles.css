@@ -105,6 +105,13 @@ section { padding:var(--spacing-lg) 0; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+/* Contact Grid */
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
 /* Responsive Breakpoints */
 @media (max-width: 800px) {
   .features, .portfolio, .testimonials { grid-template-columns:1fr; }
