@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ihr Dolmetscher</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <!-- Header / Navigation -->
   <header>
     <div class="container nav-container">
       <div class="logo">ihr Dolmetscher</div>
+      <button class="nav-toggle" aria-label="Navigation umschalten">
+        <span class="hamburger"></span>
+      </button>
       <nav class="nav-links">
         <a href="#hero">Home</a>
         <a href="#leistungen">Leistungen</a>
@@ -71,4 +74,12 @@
     © 2025 ihr Dolmetscher • Alle Rechte vorbehalten
   </footer>
 </body>
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+    });
+  </script>
 </html>
