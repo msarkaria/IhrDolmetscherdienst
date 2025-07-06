@@ -262,5 +262,55 @@
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('nav-open');
     });
+
+    // Two-Step Form Logic for Formspree
+    const step1Form = document.getElementById('fs-step1');
+    const step2Form = document.getElementById('fs-step2');
+    const nextBtn = document.getElementById('fs-next');
+    const backBtn = document.getElementById('fs-back');
+    const dots = document.querySelectorAll('.step-indicator .dot');
+    const successMsg = document.getElementById('fs-success');
+
+    nextBtn.addEventListener('click', () => {
+      if (step1Form.checkValidity()) {
+        step1Form.style.display = 'none';
+        step2Form.style.display = 'block';
+        dots[0].classList.remove('active');
+        dots[1].classList.add('active');
+      } else {
+        step1Form.reportValidity();
+      }
+    });
+
+    backBtn.addEventListener('click', () => {
+      step2Form.style.display = 'none';
+      step1Form.style.display = 'block';
+      dots[1].classList.remove('active');
+      dots[0].classList.add('active');
+    });
+
+    step2Form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Combine form data from step1 and step2
+      const data = new FormData(step1Form);
+      for (const [key, value] of new FormData(step2Form)) {
+        data.append(key, value);
+      }
+      // Submit via fetch to Formspree
+      fetch(step2Form.action || 'https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          step2Form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+        }
+      }).catch(() => {
+        alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+      });
+    });
   </script>
 </html>
