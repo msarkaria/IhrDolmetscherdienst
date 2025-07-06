@@ -170,11 +170,85 @@
     </div>
   </section>
   <!-- Section 6: Contact (Two-Step Form) -->
-  <section id="contact">
+<section id="contact">
     <div class="container">
-      <!-- Step 1 & Step 2 form markup -->
+      <h2 class="text-center">Anfrage</h2>
+      <p class="text-center">
+        Dolmetsch-Anfrage: Nutzen Sie unser Formular, um uns Ihr Anliegen zu schildern. Sie erhalten zeitnah ein unverbindliches, maßgeschneidertes Angebot – schnell, diskret und kostenlos.
+      </p>
+      <div class="contact-grid mt-lg">
+        <!-- Left: Contact Info -->
+        <div class="contact-info">
+          <h3>Kontaktinformationen</h3>
+          <p><strong>Adresse:</strong><br> Musterstraße 1, 1010 Wien, Österreich</p>
+          <p><strong>Telefon:</strong><br> +43 1 234 5678</p>
+          <p><strong>E-Mail:</strong><br> info@ihrdolmetscher.at</p>
+          <h3>Öffnungszeiten</h3>
+          <p>Montag – Freitag: 08:00 – 18:00 Uhr<br>Samstag: 09:00 – 12:00 Uhr<br>Sonntag: geschlossen</p>
+          <h3>Soziale Medien</h3>
+          <p>
+            <a href="#" target="_blank">LinkedIn</a> •
+            <a href="#" target="_blank">Xing</a> •
+            <a href="#" target="_blank">Facebook</a>
+          </p>
+        </div>
+        <!-- Right: Formspree Form -->
+        <div class="contact-form">
+          <!-- Two-Step Form -->
+          <div class="step-indicator text-center">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+          <!-- Step 1 -->
+          <form id="fs-step1" class="form-step form-step-1">
+            <div class="form-group">
+              <label for="fs-name">Name*</label>
+              <input type="text" id="fs-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="fs-email">E-Mail*</label>
+              <input type="email" id="fs-email" name="email" required />
+            </div>
+            <button type="button" class="btn-primary" id="fs-next">Weiter</button>
+          </form>
+          <!-- Step 2 -->
+          <form id="fs-step2" class="form-step form-step-2" style="display:none;">
+            <div class="form-group">
+              <label for="fs-subject">Betreff</label>
+              <input type="text" id="fs-subject" name="subject" />
+            </div>
+            <div class="form-group">
+              <label for="fs-message">Nachricht*</label>
+              <textarea id="fs-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="button" class="btn-accent" id="fs-back">Zurück</button>
+            <button type="submit" class="btn-primary">Senden</button>
+          </form>
+          <!-- Success Message -->
+          <div id="fs-success" style="display:none; text-align:center; padding:2rem;">
+            <h3>Vielen Dank! Ihre Anfrage wurde gesendet.</h3>
+          </div>
+        </div>
+            <div class="form-group">
+              <label for="fs-email">E-Mail*</label>
+              <input type="email" id="fs-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="fs-subject">Betreff</label>
+              <input type="text" id="fs-subject" name="subject" />
+            </div>
+            <div class="form-group">
+              <label for="fs-message">Nachricht*</label>
+              <textarea id="fs-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Senden</button>
+          </form>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
+
 
   <!-- Optional Footer -->
   <footer>
