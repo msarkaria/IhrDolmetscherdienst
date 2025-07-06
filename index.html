@@ -172,90 +172,75 @@
   <!-- Section 6: Contact (Two-Step Form) -->
 <section id="contact">
     <div class="container">
-      <h2 class="text-center">Anfrage</h2>
-      <p class="text-center">
-        Dolmetsch-Anfrage: Nutzen Sie unser Formular, um uns Ihr Anliegen zu schildern. Sie erhalten zeitnah ein unverbindliches, maßgeschneidertes Angebot – schnell, diskret und kostenlos.
-      </p>
       <div class="contact-grid mt-lg">
-        <!-- Left: Contact Info -->
-        <div class="contact-info">
-          <h3>Kontaktinformationen</h3>
-          <p><strong>Adresse:</strong><br> Musterstraße 1, 1010 Wien, Österreich</p>
-          <p><strong>Telefon:</strong><br> +43 1 234 5678</p>
-          <p><strong>E-Mail:</strong><br> info@ihrdolmetscher.at</p>
-          <h3>Öffnungszeiten</h3>
-          <p>Montag – Freitag: 08:00 – 18:00 Uhr<br>Samstag: 09:00 – 12:00 Uhr<br>Sonntag: geschlossen</p>
-          <h3>Soziale Medien</h3>
-          <p>
-            <a href="#" target="_blank">LinkedIn</a> •
-            <a href="#" target="_blank">Xing</a> •
-            <a href="#" target="_blank">Facebook</a>
-          </p>
-        </div>
-        <!-- Right: Formspree Form -->
-        <div class="contact-form">
-          <!-- Two-Step Form -->
-          <div class="step-indicator text-center">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-          </div>
-          <!-- Step 1 -->
-          <form id="fs-step1" class="form-step form-step-1">
-            <div class="form-group">
-              <label for="fs-name">Name*</label>
-              <input type="text" id="fs-name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="fs-email">E-Mail*</label>
-              <input type="email" id="fs-email" name="email" required />
-            </div>
-            <button type="button" class="btn-primary" id="fs-next">Weiter</button>
-          </form>
-          <!-- Step 2 -->
-          <form id="fs-step2" class="form-step form-step-2" style="display:none;">
-            <div class="form-group">
-              <label for="fs-subject">Betreff</label>
-              <input type="text" id="fs-subject" name="subject" />
-            </div>
-            <div class="form-group">
-              <label for="fs-message">Nachricht*</label>
-              <textarea id="fs-message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="button" class="btn-accent" id="fs-back">Zurück</button>
-            <button type="submit" class="btn-primary">Senden</button>
-          </form>
-          <!-- Success Message -->
-          <div id="fs-success" style="display:none; text-align:center; padding:2rem;">
-            <h3>Vielen Dank! Ihre Anfrage wurde gesendet.</h3>
+        <!-- Left Offer Card -->
+        <div class="offer-card">
+          <h2>Angebot anfordern</h2>
+          <p>Um ein kostenloses und unverbindliches Angebot zu erhalten, füllen Sie bitte die erforderlichen Angaben aus, damit wir uns innerhalb von 60 Minuten bei Ihnen melden können.</p>
+          <div class="contact-box">
+            <p>Melden Sie sich jederzeit bei uns, wenn Sie beliebige Fragen zu einem Projekt haben.</p>
+            <p class="phone"><span class="flag">🇩🇪</span> +49 800 0007 864</p>
           </div>
         </div>
-            <div class="form-group">
-              <label for="fs-email">E-Mail*</label>
-              <input type="email" id="fs-email" name="email" required />
+        <!-- Right Two-Step Styled Form -->
+        <div class="offer-form">
+          <form id="styled-step1" class="styled-form-step">
+            <h3>Art der Anfrage <span>*</span></h3>
+            <div class="radio-group">
+              <label><input type="radio" name="type" value="unternehmen" checked> Unternehmen</label>
+              <label><input type="radio" name="type" value="privat"> Privat</label>
             </div>
             <div class="form-group">
-              <label for="fs-subject">Betreff</label>
-              <input type="text" id="fs-subject" name="subject" />
+              <label for="styled-name">Vollständiger Name <span>*</span></label>
+              <input type="text" id="styled-name" required />
             </div>
-            <div class="form-group">
-              <label for="fs-message">Nachricht*</label>
-              <textarea id="fs-message" name="message" rows="5" required></textarea>
+            <div class="form-row">
+              <div class="form-group half">
+                <label for="styled-email">E-Mail <span>*</span></label>
+                <input type="email" id="styled-email" required />
+              </div>
+              <div class="form-group half">
+                <label for="styled-phone">Telefonnummer <span>*</span></label>
+                <div class="phone-input">
+                  <select name="phone-code">
+                    <option value="+43">+43</option>
+                    <option value="+49" selected>+49</option>
+                  </select>
+                  <input type="tel" id="styled-phone" required />
+                </div>
+              </div>
             </div>
-            <button type="submit" class="btn-primary">Senden</button>
+            <h3>Welche Dienstleistung benötigen Sie? <span>*</span></h3>
+            <div class="service-options">
+              <label class="service-item">
+                <input type="radio" name="service" value="telefon">
+                <div class="icon">📞</div>
+                Telefon-Dolmetschen
+              </label>
+              <label class="service-item">
+                <input type="radio" name="service" value="vorort">
+                <div class="icon">🤝</div>
+                Vor-Ort-Dolmetschen
+              </label>
+              <label class="service-item">
+                <input type="radio" name="service" value="video">
+                <div class="icon">🎥</div>
+                Video-Dolmetschen
+              </label>
+            </div>
+            <button type="button" class="btn-primary">Weiter</button>
           </form>
         </div>
       </div>
     </div>
-    </div>
   </section>
-
 
   <!-- Optional Footer -->
   <footer>
     © 2025 ihr Dolmetscher • Alle Rechte vorbehalten
   </footer>
 </body>
-  <script>
+ <script>
     // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
