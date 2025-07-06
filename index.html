@@ -10,7 +10,41 @@
   <!-- Header / Navigation -->
   <header>
     <div class="container nav-container">
-      <div class="logo">ihr Dolmetscher</div>
+      <div class="logo">
+        <!-- Logo SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 400 120" aria-labelledby="logoTitle logoDesc" role="img">
+          <title id="logoTitle">ihr Dolmetscher Logo</title>
+          <desc id="logoDesc">Blaue stilisierte iD Monogramm und Schriftzug ihr Dolmetscher</desc>
+          <style>
+            .red  { fill: #E00000; }
+            .blue { fill: #0066B2; }
+            text  { font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 700; }
+          </style>
+          <!-- Monogram: stylized "iD" -->
+          <g id="monogram" transform="translate(0,0)">
+            <!-- "i" dot as speech bubble -->
+            <path class="blue" d="
+              M25,15
+              a8,8 0 1,1 -0.1,0
+              L25,30
+              L21,25
+              Z" />
+            <!-- "i" stem -->
+            <rect class="blue" x="21" y="30" width="8" height="50" />
+            <!-- "D" with speech-tail -->
+            <path class="red" d="
+              M60,30
+              H95
+              A25,25 0 0,1 95,80
+              H60
+              L45,95
+              V30
+              Z" />
+          </g>
+          <!-- Wordmark -->
+          <text class="blue" x="120" y="80">ihr Dolmetscher</text>
+        </svg>
+      </div>
       <button class="nav-toggle" aria-label="Navigation umschalten">
         <span class="hamburger"></span>
       </button>
