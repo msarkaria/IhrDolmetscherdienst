@@ -13,6 +13,11 @@
   --container-max: 1200px;
 }
 
+.logo-img {
+  max-height: 48px;
+  width: auto;
+}
+
 /* Base Reset & Layout */
 *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
 body { font-family:'Open Sans',sans-serif; color:var(--color-text); background:var(--color-bg); line-height:1.6; }
