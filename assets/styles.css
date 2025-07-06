@@ -106,11 +106,103 @@ section { padding:var(--spacing-lg) 0; }
 }
 
 /* Contact Grid */
+#contact {
+  background: var(--color-accent);
+  color: #fff;
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
 #contact .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
   align-items: start;
+}
+
+/* Card containers */
+.offer-card,
+.offer-form {
+  background: #fff;
+  color: var(--color-text);
+  padding: var(--spacing-lg);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Left Offer Card */
+.offer-card h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+.offer-card p {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+.offer-card .contact-box {
+  background: var(--color-light-bg, #f9f9f9);
+  padding: var(--spacing-md);
+  border-radius: 0.25rem;
+  margin-top: var(--spacing-md);
+}
+.offer-card .phone {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-top: var(--spacing-sm);
+}
+
+/* Right Two-Step Styled Form */
+.offer-form h3 {
+  font-size: var(--fs-md);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+.offer-form label span {
+  color: var(--color-primary);
+}
+.offer-form .radio-group label {
+  margin-right: var(--spacing-lg);
+  color: var(--color-text);
+}
+.offer-form .form-group input,
+.offer-form .form-group textarea,
+.offer-form select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: var(--fs-md);
+  margin-bottom: var(--spacing-md);
+}
+.offer-form .form-row .half {
+  width: calc(50% - var(--spacing-md)/2);
+}
+.offer-form .form-row {
+  display: flex;
+  gap: var(--spacing-md);
+}
+.offer-form .service-options {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+.offer-form .service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-text);
+}
+.offer-form .service-item .icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+.offer-form button {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 4px;
+  border: none;
+  font-size: var(--fs-md);
 }
 /* Responsive Breakpoints */
 @media (max-width: 800px) {
