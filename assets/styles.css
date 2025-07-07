@@ -225,6 +225,12 @@ section { padding:var(--spacing-lg) 0; }
 @media (max-width: 800px) {
   .features, .portfolio, .testimonials { grid-template-columns:1fr; }
 }
+@media (max-width: 768px) {
+  .contact-info,
+  .contact-form {
+    margin-bottom: var(--spacing-lg);
+  }
+}
 
 @media (max-width: 768px) {
   .nav-toggle { display:block; }
