@@ -165,7 +165,7 @@ section { padding:var(--spacing-lg) 0; }
   margin-bottom: var(--spacing-md);
 }
 .offer-card p {
-  color: var(--color-text);
+  color: #FFFFFF;
   margin-bottom: var(--spacing-md);
 }
 .offer-card .contact-box {
