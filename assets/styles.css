@@ -231,7 +231,13 @@ section { padding:var(--spacing-lg) 0; }
     margin-bottom: var(--spacing-lg);
   }
 }
-
+@media (max-width: 768px) {
+  /* Stack the two contact panels vertically on smaller screens */
+  #contact .contact-grid {
+    grid-template-columns: 1fr;      /* one column instead of two */
+    row-gap: var(--spacing-lg);     /* add vertical spacing */
+  }
+}
 @media (max-width: 768px) {
   .nav-toggle { display:block; }
   .nav-links { display:none; flex-direction:column; position:absolute; top:100%; right:0; background:var(--color-bg); width:200px; padding:var(--spacing-md); box-shadow:0 4px 8px rgba(0,0,0,0.1); }
