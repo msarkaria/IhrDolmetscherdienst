@@ -303,3 +303,14 @@ section { padding:var(--spacing-lg) 0; }
 
 /* Footer */
 footer { padding:var(--spacing-md) 0; background:#f5f5f5; text-align:center; font-size:var(--fs-sm); }
+
+footer a{
+  
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;        /* adjust size as needed */
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+
+}
