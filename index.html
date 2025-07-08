@@ -205,69 +205,137 @@
         </div>
         <!-- Right Two-Step Styled Form -->
         <div class="offer-form">
-          <form id="styled-step1" class="styled-form-step">
-            <h2>Anfrage</h2>
-            <p>Nutzen Sie unser Formular, um uns Ihr Anliegen zu schildern. Sie erhalten zeitnah ein unverbindliches,
-              maßgeschneidertes Angebot - schnell, diskret und kostenlos.</p>
-            <h3>Art der Anfrage <span>*</span></h3>
-            <div class="radio-group">
-              <label><input type="radio" name="type" value="unternehmen" checked> Unternehmen</label>
-              <label><input type="radio" name="type" value="privat"> Privat</label>
-            </div>
-            <div class="form-group">
-              <label for="styled-name">Vollständiger Name <span>*</span></label>
-              <input type="text" id="styled-name" required />
-            </div>
-            <div class="form-row">
-              <div class="form-group half">
-                <label for="styled-email">E-Mail <span>*</span></label>
-                <input type="email" id="styled-email" required />
-              </div>
-              <div class="form-group half">
-                <label for="styled-phone">Telefonnummer <span>*</span></label>
-                <div class="phone-input">
-                  <select name="phone-code">
-                    <option value="+43">+43</option>
-                    <option value="+49" selected>+49</option>
-                  </select>
-                  <input type="tel" id="styled-phone" required />
-                </div>
-              </div>
-            </div>
-            <h3>Welche Dienstleistung benötigen Sie? <span>*</span></h3>
-            <div class="service-options">
-              <label class="service-item">
-                <input type="radio" name="service" value="telefon">
-                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21 3 13.93 3 5.5a1 1 0 011-1H7.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"
-                    fill="var(--color-primary)" />
-                </svg>
-                Telefon-Dolmetschen
-              </label>
-              <label class="service-item">
-                <input type="radio" name="service" value="vorort">
-                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
-                    fill="var(--color-primary)" />
-                </svg>
-                </svg>
-                Vor-Ort-Dolmetschen
-              </label>
-              <label class="service-item">
-                <input type="radio" name="service" value="video">
-                <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M17 10.5V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.5l4 4v-11l-4 4z"
-                    fill="var(--color-primary)" />
-                </svg>
-                Video-Dolmetschen
-              </label>
-            </div>
-            <button type="button" class="btn-primary">Weiter</button>
-          </form>
+  <form id="styled-form">
+    <!-- Step 1 -->
+    <div class="form-step" id="step-1">
+      <h2>Anfrage</h2>
+      <p>Nutzen Sie unser Formular, um uns Ihr Anliegen zu schildern.</p>
+
+      <!-- 1st row: Art der Anfrage -->
+      <div class="form-row form-group">
+        <label>Art der Anfrage <span>*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="type" value="unternehmen" checked> Unternehmen</label>
+          <label><input type="radio" name="type" value="privat"> Privat</label>
         </div>
+      </div>
+
+      <!-- 2nd row: Name -->
+      <div class="form-row">
+        <div class="form-group full">
+          <label>Vollständiger Name <span>*</span></label>
+          <input type="text" required>
+        </div>
+      </div>
+
+      <!-- 3rd row: Company Name & Branch (only if Unternehmen) -->
+      <div class="form-row company-fields">
+        <div class="form-group half">
+          <label>Firmenname</label>
+          <input type="text">
+        </div>
+        <div class="form-group half">
+          <label>Standort</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <!-- 4th row: Email + Phone -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label>E-Mail <span>*</span></label>
+          <input type="email" required>
+        </div>
+        <div class="form-group half">
+          <label>Telefonnummer <span>*</span></label>
+          <div class="phone-input">
+            <select>
+              <option>+43</option>
+              <option selected>+49</option>
+            </select>
+            <input type="tel" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5th row: Services -->
+      <div class="form-row">
+        <h3>Welche Dienstleistung? <span>*</span></h3>
+        <div class="service-options">
+          <label><input type="radio" name="service"> Telefon-Dolmetschen</label>
+          <label><input type="radio" name="service"> Vor-Ort-Dolmetschen</label>
+          <label><input type="radio" name="service"> Video-Dolmetschen</label>
+        </div>
+      </div>
+
+      <!-- 6th row: Button -->
+      <div class="form-row">
+        <button type="button" id="next-btn">Weiter</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="form-step" id="step-2" style="display:none">
+      <h2>Dolmetschen Details</h2>
+
+      <!-- 1st row -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label>Ausgangssprache</label>
+          <input type="text">
+        </div>
+        <div class="form-group half">
+          <label>Zweitsprache</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <!-- 2nd row -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label>Startdatum</label>
+          <input type="date">
+        </div>
+        <div class="form-group half">
+          <label>Enddatum</label>
+          <input type="date">
+        </div>
+      </div>
+
+      <!-- 3rd row -->
+      <div class="form-row">
+        <div class="form-group third">
+          <label>Uhrzeit von</label>
+          <input type="time">
+        </div>
+        <div class="form-group third">
+          <label>Uhrzeit bis</label>
+          <input type="time">
+        </div>
+        <div class="form-group third">
+          <label>Anzahl Dolmetscher</label>
+          <input type="number" min="1">
+        </div>
+      </div>
+
+      <!-- 4th row -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label>Ort</label>
+          <input type="text">
+        </div>
+        <div class="form-group half">
+          <label>Anzahl Teilnehmer</label>
+          <input type="number" min="1">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <button type="submit">Absenden</button>
+      </div>
+    </div>
+  </form>
+</div>
       </div>
     </div>
   </section>
@@ -289,54 +357,24 @@
     navLinks.classList.toggle('nav-open');
   });
 
-  // Two-Step Form Logic for Formspree
-  const step1Form = document.getElementById('fs-step1');
-  const step2Form = document.getElementById('fs-step2');
-  const nextBtn = document.getElementById('fs-next');
-  const backBtn = document.getElementById('fs-back');
-  const dots = document.querySelectorAll('.step-indicator .dot');
-  const successMsg = document.getElementById('fs-success');
 
-  nextBtn.addEventListener('click', () => {
-    if (step1Form.checkValidity()) {
-      step1Form.style.display = 'none';
-      step2Form.style.display = 'block';
-      dots[0].classList.remove('active');
-      dots[1].classList.add('active');
-    } else {
-      step1Form.reportValidity();
-    }
-  });
+ 
 
-  backBtn.addEventListener('click', () => {
-    step2Form.style.display = 'none';
-    step1Form.style.display = 'block';
-    dots[1].classList.remove('active');
-    dots[0].classList.add('active');
-  });
-
-  step2Form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Combine form data from step1 and step2
-    const data = new FormData(step1Form);
-    for (const [key, value] of new FormData(step2Form)) {
-      data.append(key, value);
-    }
-    // Submit via fetch to Formspree
-    fetch(step2Form.action || 'https://formspree.io/f/your-form-id', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        step2Form.style.display = 'none';
-        successMsg.style.display = 'block';
+  document.querySelectorAll('input[name="type"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const companyFields = document.querySelector('.company-fields');
+      if (document.querySelector('input[name="type"]:checked').value === 'unternehmen') {
+        companyFields.style.display = 'flex';
       } else {
-        alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+        companyFields.style.display = 'none';
       }
-    }).catch(() => {
-      alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
     });
+  });
+
+  // Next button logic
+  document.getElementById('next-btn').addEventListener('click', () => {
+    document.getElementById('step-1').style.display = 'none';
+    document.getElementById('step-2').style.display = 'block';
   });
 </script>
 
