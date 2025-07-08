@@ -28,6 +28,28 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
   background: var(--color-light-bg, #f9f9f9);
 }
+
+/* Language Switcher */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-sm);
+  margin-left: auto;      /* pushes it to the far right */
+}
+
+.lang-link {
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0 var(--spacing-sm);
+  transition: color 0.2s;
+}
+
+.lang-link:hover,
+.lang-link.active {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 /* Utilities */
 .container { width:90%; max-width:var(--container-max); margin:0 auto; }
 .text-center { text-align:center; }
