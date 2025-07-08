@@ -228,9 +228,15 @@ section { padding:var(--spacing-lg) 0; }
 .offer-form .form-row .half {
   width: calc(50% - var(--spacing-md)/2);
 }
+
 .offer-form .form-row {
   display: flex;
   gap: var(--spacing-md);
+}
+
+.offer-form .phone-input select {
+  width: 20%;
+  
 }
 .offer-form .service-options {
   display: flex;
