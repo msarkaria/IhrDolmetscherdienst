@@ -540,9 +540,15 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  logo a{
+    font-size: 1.25rem;
+  }
   #contact .contact-grid {
     grid-template-columns: 1fr;
     row-gap: var(--spacing-lg);
+  }
+  #styled-form{
+    scroll-margin-top: 60px;
   }
   .contact-info,
   .contact-form {
