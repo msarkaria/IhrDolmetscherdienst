@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ihr Dolmetscherdienst</title>
   <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 </head>
 
 <body>
@@ -312,26 +313,27 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label for="source-language">Ausgangssprache</label>
-                  <select id="source-language" name="source-language[]" multiple size="4">
-                    <option>Deutsch</option>
-                    <option>Englisch</option>
-                    <option>Hindi</option>
-                    <option>Urdu</option>
-                    <option>Punjabi</option>
-                    <option>Bengali</option>
-                    <option>Arabisch</option>
+                  <select id="source-language" name="source-language[]" multiple>
+                    <option value="Deutsch">Deutsch</option>
+                    <option value="Englisch">Englisch</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Arabisch">Arabisch</option>
                   </select>
                 </div>
+
                 <div class="form-group half">
                   <label for="target-language">Zweitsprache</label>
-                  <select id="target-language" name="target-language[]" multiple size="4">
-                    <option>Deutsch</option>
-                    <option>Englisch</option>
-                    <option>Hindi</option>
-                    <option>Urdu</option>
-                    <option>Punjabi</option>
-                    <option>Bengali</option>
-                    <option>Arabisch</option>
+                  <select id="target-language" name="target-language[]" multiple>
+                    <option value="Deutsch">Deutsch</option>
+                    <option value="Englisch">Englisch</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Arabisch">Arabisch</option>
                   </select>
                 </div>
               </div>
@@ -395,6 +397,7 @@
 
     © 2025 Ihr Dolmetscherdienst • Alle Rechte vorbehalten
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 </body>
 <script>
   // Mobile nav toggle
@@ -424,8 +427,8 @@
     document.getElementById('step-2').style.display = 'block';
   });
 
-   document.querySelectorAll('a[href="#styled-form"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+  document.querySelectorAll('a[href="#styled-form"]').forEach(link => {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
       const form = document.querySelector('#styled-form');
       if (form) {
@@ -434,6 +437,16 @@
           form.querySelector('input, select, textarea').focus();
         }, 600);
       }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const sourceLanguage = new Choices('#source-language', {
+      removeItemButton: true,
+    });
+
+    const targetLanguage = new Choices('#target-language', {
+      removeItemButton: true,
     });
   });
 </script>
