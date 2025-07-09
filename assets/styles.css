@@ -95,7 +95,9 @@ header {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 4px;
 }
-
+section {
+  scroll-margin-top: 80px;
+}
 .nav-toggle { display: none; }
 
 .hamburger {
