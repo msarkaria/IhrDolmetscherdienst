@@ -390,16 +390,21 @@ section { padding: var(--spacing-lg) 0; }
 .choices__list--multiple .choices__item .choices__button {
   margin-left: 0.5rem;
   border: none;
-  background: none; /* remove weird SVG */
-  color: #fff; /* match your tag text */
+  background: none !important; /* remove default SVG */
+  color: inherit; /* match tag text color automatically */
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
   padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .choices__list--multiple .choices__item .choices__button::after {
   content: '×';  /* simple cross icon */
+  color: inherit;
+  font-weight: bold;
 }
 
 .choices__list--multiple .choices__item .choices__button:hover {
