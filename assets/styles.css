@@ -193,6 +193,9 @@ section { padding: var(--spacing-lg) 0; }
   color: #fff;
   padding: var(--spacing-lg) 0;
 }
+#contact .container {
+  overflow-x: hidden;
+}
 .contact-info,
 .contact-form {
   width: 100%;
@@ -211,6 +214,8 @@ section { padding: var(--spacing-lg) 0; }
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
   align-items: center;
+     width: 100%;
+  max-width: 100%;
 }
 
 .offer-card, .offer-form {
@@ -410,10 +415,15 @@ footer a {
   .nav-links.nav-open { display: flex; }
   .nav-links a { margin: var(--spacing-md) 0; margin-left: 0; }
 
-  .offer-form .form-group,
+   .offer-form .form-group,
   .offer-form .form-group.half,
   .offer-form .form-group.third {
     flex: 1 1 100%;
+  }
+
+   .offer-form .form-row {
+    flex-wrap: wrap;
+    flex-direction: column;
   }
   .offer-form .phone-input {
     flex-direction: column;
@@ -424,6 +434,9 @@ footer a {
   .offer-form .service-item {
     flex: 1 1 100%;
   }
+   .offer-form select {
+  max-width: 100%;
+}
 }
 
 @media (max-width: 600px) {
