@@ -313,7 +313,7 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label for="source-language">Ausgangssprache</label>
-                  <select id="source-language" name="source-language[]" placeholder="select langauge" multiple>
+                  <select id="source-language" name="source-language[]" data-placeholder="Sprache auswählen" multiple>
                     <option value="Deutsch">Deutsch</option>
                     <option value="Englisch">Englisch</option>
                     <option value="Hindi">Hindi</option>
@@ -326,7 +326,7 @@
 
                 <div class="form-group half">
                   <label for="target-language">Zweitsprache</label>
-                  <select id="target-language" name="target-language[]" placeholder="select langauge" multiple>
+                  <select id="target-language" name="target-language[]" data-placeholder="Sprache auswählen" multiple>
                     <option value="Deutsch">Deutsch</option>
                     <option value="Englisch">Englisch</option>
                     <option value="Hindi">Hindi</option>
@@ -449,6 +449,17 @@
       removeItemButton: true,
     });
   });
+
+  const sourceLanguage = new Choices('#source-language', {
+  removeItemButton: true,
+  placeholder: true,
+  placeholderValue: 'Sprache auswählen'
+});
+const targetLanguage = new Choices('#target-language', {
+  removeItemButton: true,
+  placeholder: true,
+  placeholderValue: 'Sprache auswählen'
+});
 </script>
 
 </html>
