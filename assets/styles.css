@@ -377,13 +377,13 @@ section { padding: var(--spacing-lg) 0; }
 
 /* ✅ Selected item (chip/tag) styling */
 .choices__list--multiple .choices__item {
-  background-color: var(--color-primary);
-  border-radius: 20px;
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.5rem;
   display: inline-flex;
   align-items: center;
+  background: var(--color-primary);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  color: #fff;
+  margin-right: 0.5rem;
 }
 
 /* ✅ Fix Choices.js chip remove button */
