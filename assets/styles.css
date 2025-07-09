@@ -283,7 +283,7 @@ section { padding: var(--spacing-lg) 0; }
   flex: 1 1 calc(33.333% - var(--spacing-md)/2);
 }
 
-.offer-form .form-group input,
+
 .offer-form .form-group select {
   width: 100%;
   padding: var(--spacing-sm);
@@ -298,6 +298,7 @@ section { padding: var(--spacing-lg) 0; }
   border-color: var(--color-primary);
   outline: none;
 }
+.offer-form .form-group input,
 .offer-form .form-group textarea {
   width: 100%;
   padding: var(--spacing-sm);
