@@ -20,6 +20,10 @@
         <span class="hamburger"></span>
       </button>
       <nav class="nav-links">
+        <div class="lang-switch">
+          <a href="index-en.html" class="lang-link">EN</a> |
+          <a href="index.html" class="lang-link">DE</a>
+        </div>
         <a href="#hero">Home</a>
         <a href="#leistungen">Leistungen</a>
         <a href="#sprachen">Sprachen</a>
@@ -27,9 +31,9 @@
         <a href="#team">Unser Team</a>
         <a href="#contact" class="btn-primary">Anfrage</a>
       </nav>
-      <div class="lang-switch">
-        <a href="index-en.html" class="lang-link">English</a> |
-        <a href="index.html" class="lang-link">Deutsch</a>
+      <div class="lang-switch-desktop">
+        <a href="index-en.html" class="lang-link">EN</a> |
+        <a href="index.html" class="lang-link">DE</a>
       </div>
     </div>
   </header>
@@ -295,84 +299,85 @@
                 <button type="button" id="next-btn">Weiter</button>
               </div>
             </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" id="step-2" style="display:none">
+              <h2>Dolmetschen Details</h2>
+
+              <!-- 1st row -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="source-language">Ausgangssprache</label>
+                  <select id="source-language" name="source-language[]" multiple size="4">
+                    <option>Deutsch</option>
+                    <option>Englisch</option>
+                    <option>Hindi</option>
+                    <option>Urdu</option>
+                    <option>Punjabi</option>
+                    <option>Bengali</option>
+                    <option>Arabisch</option>
+                  </select>
+                </div>
+                <div class="form-group half">
+                  <label for="target-language">Zweitsprache</label>
+                  <select id="target-language" name="target-language[]" multiple size="4">
+                    <option>Deutsch</option>
+                    <option>Englisch</option>
+                    <option>Hindi</option>
+                    <option>Urdu</option>
+                    <option>Punjabi</option>
+                    <option>Bengali</option>
+                    <option>Arabisch</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- 2nd row -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label>Startdatum</label>
+                  <input type="date">
+                </div>
+                <div class="form-group half">
+                  <label>Enddatum</label>
+                  <input type="date">
+                </div>
+              </div>
+
+              <!-- 3rd row -->
+              <div class="form-row">
+                <div class="form-group third">
+                  <label>Uhrzeit von</label>
+                  <input type="time">
+                </div>
+                <div class="form-group third">
+                  <label>Uhrzeit bis</label>
+                  <input type="time">
+                </div>
+                <div class="form-group third">
+                  <label>Anzahl Dolmetscher</label>
+                  <input type="number" min="1">
+                </div>
+              </div>
+
+              <!-- 4th row -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label>Ort</label>
+                  <input type="text">
+                </div>
+                <div class="form-group half">
+                  <label>Anzahl Teilnehmer</label>
+                  <input type="number" min="1">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <button type="submit">Absenden</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <!-- Step 2 -->
-        <div class="form-step" id="step-2" style="display:none">
-          <h2>Dolmetschen Details</h2>
-
-          <!-- 1st row -->
-          <div class="form-row">
-            <div class="form-group half">
-              <label for="source-language">Ausgangssprache</label>
-              <select id="source-language" name="source-language[]" multiple size="4">
-                <option>Deutsch</option>
-                <option>Englisch</option>
-                <option>Hindi</option>
-                <option>Urdu</option>
-                <option>Punjabi</option>
-                <option>Bengali</option>
-                <option>Arabisch</option>
-              </select>
-            </div>
-            <div class="form-group half">
-              <label for="target-language">Zweitsprache</label>
-              <select id="target-language" name="target-language[]" multiple size="4">
-                <option>Deutsch</option>
-                <option>Englisch</option>
-                <option>Hindi</option>
-                <option>Urdu</option>
-                <option>Punjabi</option>
-                <option>Bengali</option>
-                <option>Arabisch</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 2nd row -->
-          <div class="form-row">
-            <div class="form-group half">
-              <label>Startdatum</label>
-              <input type="date">
-            </div>
-            <div class="form-group half">
-              <label>Enddatum</label>
-              <input type="date">
-            </div>
-          </div>
-
-          <!-- 3rd row -->
-          <div class="form-row">
-            <div class="form-group third">
-              <label>Uhrzeit von</label>
-              <input type="time">
-            </div>
-            <div class="form-group third">
-              <label>Uhrzeit bis</label>
-              <input type="time">
-            </div>
-            <div class="form-group third">
-              <label>Anzahl Dolmetscher</label>
-              <input type="number" min="1">
-            </div>
-          </div>
-
-          <!-- 4th row -->
-          <div class="form-row">
-            <div class="form-group half">
-              <label>Ort</label>
-              <input type="text">
-            </div>
-            <div class="form-group half">
-              <label>Anzahl Teilnehmer</label>
-              <input type="number" min="1">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <button type="submit">Absenden</button>
-          </div>
-        </div>
-        </form>
       </div>
     </div>
     </div>
