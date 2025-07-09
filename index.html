@@ -29,7 +29,7 @@
         <a href="#sprachen">Sprachen</a>
         <a href="#branchen">Branchen</a>
         <a href="#team">Unser Team</a>
-        <a href="#contact" class="btn-primary">Anfrage</a>
+        <a href="#styled-form" class="btn-primary">Anfrage</a>
       </nav>
       <div class="lang-switch-desktop">
         <a href="index-en.html" class="lang-link">EN</a> |
@@ -422,6 +422,19 @@
   document.getElementById('next-btn').addEventListener('click', () => {
     document.getElementById('step-1').style.display = 'none';
     document.getElementById('step-2').style.display = 'block';
+  });
+
+   document.querySelectorAll('a[href="#styled-form"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const form = document.querySelector('#styled-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+          form.querySelector('input, select, textarea').focus();
+        }, 600);
+      }
+    });
   });
 </script>
 
