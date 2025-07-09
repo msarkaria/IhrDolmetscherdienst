@@ -196,6 +196,12 @@ section { padding: var(--spacing-lg) 0; }
 #contact .container {
   overflow-x: hidden;
 }
+
+.contact-box,
+.offer-card {
+  max-width: 100%;
+  word-break: break-word;
+}
 .contact-info,
 .contact-form {
   width: 100%;
