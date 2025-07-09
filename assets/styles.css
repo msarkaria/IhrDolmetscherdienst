@@ -553,7 +553,7 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  logo a{
+  .logo a{
     font-size: 1.25rem;
   }
   #contact .contact-grid {
