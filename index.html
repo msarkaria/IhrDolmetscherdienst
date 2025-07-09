@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ihr Dolmetscherdienst</title>
   <link rel="stylesheet" href="/assets/styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+   <!-- ✅ Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -310,32 +313,30 @@
               <h2>Dolmetschen Details</h2>
 
               <!-- 1st row -->
-              <div class="form-row">
-                <div class="form-group half">
-                  <label for="source-language">Ausgangssprache</label>
-                  <select id="source-language" name="source-language[]" data-placeholder="Sprache auswählen" multiple>
-                    <option value="Deutsch">Deutsch</option>
-                    <option value="Englisch">Englisch</option>
-                    <option value="Hindi">Hindi</option>
-                    <option value="Urdu">Urdu</option>
-                    <option value="Punjabi">Punjabi</option>
-                    <option value="Bengali">Bengali</option>
-                    <option value="Arabisch">Arabisch</option>
-                  </select>
-                </div>
+              <div class="form-group half">
+                <label for="source-language">Ausgangssprache</label>
+                <select id="source-language" name="source-language[]" multiple>
+                  <option>Deutsch</option>
+                  <option>Englisch</option>
+                  <option>Hindi</option>
+                  <option>Urdu</option>
+                  <option>Punjabi</option>
+                  <option>Bengali</option>
+                  <option>Arabisch</option>
+                </select>
+              </div>
 
-                <div class="form-group half">
-                  <label for="target-language">Zweitsprache</label>
-                  <select id="target-language" name="target-language[]" data-placeholder="Sprache auswählen" multiple>
-                    <option value="Deutsch">Deutsch</option>
-                    <option value="Englisch">Englisch</option>
-                    <option value="Hindi">Hindi</option>
-                    <option value="Urdu">Urdu</option>
-                    <option value="Punjabi">Punjabi</option>
-                    <option value="Bengali">Bengali</option>
-                    <option value="Arabisch">Arabisch</option>
-                  </select>
-                </div>
+              <div class="form-group half">
+                <label for="target-language">Zweitsprache</label>
+                <select id="target-language" name="target-language[]" multiple>
+                  <option>Deutsch</option>
+                  <option>Englisch</option>
+                  <option>Hindi</option>
+                  <option>Urdu</option>
+                  <option>Punjabi</option>
+                  <option>Bengali</option>
+                  <option>Arabisch</option>
+                </select>
               </div>
 
               <!-- 2nd row -->
@@ -397,7 +398,7 @@
 
     © 2025 Ihr Dolmetscherdienst • Alle Rechte vorbehalten
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </body>
 <script>
   // Mobile nav toggle
@@ -440,20 +441,21 @@
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-     const sourceLanguage = new Choices('#source-language', {
-  removeItemButton: true,
-  placeholder: true,
-  placeholderValue: 'Sprache auswählen'
-});
-const targetLanguage = new Choices('#target-language', {
-  removeItemButton: true,
-  placeholder: true,
-  placeholderValue: 'Sprache auswählen'
-});
+  $(document).ready(function () {
+    $('#source-language').select2({
+      placeholder: "Wählen Sie Sprachen",
+      tags: true,
+      width: '100%'
+    });
+    $('#target-language').select2({
+      placeholder: "Wählen Sie Sprachen",
+      tags: true,
+      width: '100%'
+    });
   });
 
- 
+
+
 </script>
 
 </html>
