@@ -284,7 +284,20 @@ section { padding: var(--spacing-lg) 0; }
 }
 
 .offer-form .form-group input,
-.offer-form .form-group select,
+.offer-form .form-group select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: var(--fs-md);
+  min-height: 100px; /* optional: give enough height for multiple selections */
+  transition: border-color 0.3s;
+}
+
+.offer-form .form-group select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
 .offer-form .form-group textarea {
   width: 100%;
   padding: var(--spacing-sm);
