@@ -3,37 +3,21 @@
    ============================ */
 
 :root {
-  /* Brand Colors */
-  --color-primary: #005B99;   /* Deep Trust Blue */
-  --color-accent:  #E85D4F;   /* Warm Coral for CTA & highlights */
-
-  /* Text & Neutrals */
-  --color-text:    #333333;   /* Crisp, readable dark gray */
-  --color-bg:      #FFFFFF;   /* White background for clarity */
-  --color-neutral-bg: #F9F9F9; /* Light neutral for section breaks */
-
-  /* Borders & Lines */
-  --color-border:  #DDDDDD;   /* Soft gray for dividers and input borders */
-
-  /* Feedback States */
-  --color-error:   #D32F2F;   /* Distinct error red — not used for branding */
-  --color-success: #2E7D32;   /* Optional success green, if needed */
-
-  /* Font Sizes */
-  --fs-xl:         2.5rem;  /* Hero headline */
-  --fs-lg:         1.5rem;  /* Section headings */
-  --fs-md:         1rem;    /* Body text */
-  --fs-sm:         0.875rem; /* Small text, labels */
-
-  /* Spacing */
-  --spacing-xs:    0.25rem;
+  --color-primary: #E00000;
+  --color-accent:  #0066B2;
+  --color-text:    #333333;
+  --color-bg:      #FFFFFF;
   --spacing-sm:    0.5rem;
   --spacing-md:    1rem;
   --spacing-lg:    2rem;
-
-  /* Container Max Width */
+  --fs-xl:         2.5rem;
+  --fs-lg:         1.5rem;
+  --fs-md:         1rem;
+  --fs-sm:         0.875rem;
   --container-max: 1200px;
 }
+
+
 
 
 /* ============================
