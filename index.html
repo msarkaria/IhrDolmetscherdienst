@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ihr Dolmetscherdienst</title>
-  
+
   <!-- Select2 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-   <!-- ✅ Include jQuery -->
+  <!-- ✅ Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
@@ -217,8 +217,12 @@
 
         </div>
         <!-- Right Two-Step Styled Form -->
+
         <div class="offer-form">
           <form id="styled-form">
+            <!-- Honeypot: hidden field -->
+            <input type="text" name="companyWebsite" style="display:none;">
+
             <!-- Step 1 -->
             <div class="form-step" id="step-1">
               <h2>Anfrage</h2>
@@ -237,7 +241,7 @@
               <div class="form-row">
                 <div class="form-group full">
                   <label>Vollständiger Name <span>*</span></label>
-                  <input type="text" required>
+                  <input type="text" name="fullname" required>
                 </div>
               </div>
 
@@ -245,11 +249,12 @@
               <div class="form-row company-fields">
                 <div class="form-group half">
                   <label>Name des Unternehmens</label>
-                  <input type="text">
+                  <input type="text" name="companyName">
                 </div>
 
                 <div class="form-group half">
                   <label for="industry">Unternehmensbranche <span>*</span></label>
+
                   <select id="industry" name="industry" required>
                     <option value="" disabled selected>Bitte wählen...</option>
                     <option>Behörden / Öffentlicher Dienst</option>
@@ -271,24 +276,24 @@
                     <option>Privater Bereich</option>
                     <option>Sonstiges / Anderes</option>
                   </select>
+
                 </div>
               </div>
-
 
               <!-- 4th row: Email + Phone -->
               <div class="form-row">
                 <div class="form-group half">
                   <label>E-Mail <span>*</span></label>
-                  <input type="email" required>
+                  <input type="email" name="email" required>
                 </div>
                 <div class="form-group half">
                   <label>Telefonnummer <span>*</span></label>
                   <div class="phone-input">
-                    <select>
+                    <select name="countryCode">
                       <option>+43</option>
                       <option selected>+49</option>
                     </select>
-                    <input type="tel" required>
+                    <input type="tel" name="phone" required>
                   </div>
                 </div>
               </div>
@@ -297,26 +302,27 @@
               <div class="form-row">
                 <h3>Welche Dienstleistung? <span>*</span></h3>
                 <div class="service-options">
-                  <label><input type="radio" name="service"> Telefon-Dolmetschen</label>
-                  <label><input type="radio" name="service"> Vor-Ort-Dolmetschen</label>
-                  <label><input type="radio" name="service"> Video-Dolmetschen</label>
+                  <label><input type="radio" name="service" value="Telefon-Dolmetschen" required>
+                    Telefon-Dolmetschen</label>
+                  <label><input type="radio" name="service" value="Vor-Ort-Dolmetschen"> Vor-Ort-Dolmetschen</label>
+                  <label><input type="radio" name="service" value="Video-Dolmetschen"> Video-Dolmetschen</label>
                 </div>
               </div>
 
-              <!-- 6th row: Button -->
+              <!-- Next button -->
               <div class="form-row">
                 <button type="button" id="next-btn">Weiter</button>
               </div>
             </div>
 
             <!-- Step 2 -->
-            <div class="form-step" id="step-2" style="display:none">
+            <div class="form-step" id="step-2" style="display:none;">
               <h2>Dolmetschen Details</h2>
 
               <!-- 1st row -->
               <div class="form-group half">
                 <label for="source-language">Ausgangssprache</label>
-                <select id="source-language" name="source-language[]" multiple>
+                <select id="source-language" name="sourceLanguage[]" multiple>
                   <option>Deutsch</option>
                   <option>Englisch</option>
                   <option>Hindi</option>
@@ -329,7 +335,7 @@
 
               <div class="form-group half">
                 <label for="target-language">Zweitsprache</label>
-                <select id="target-language" name="target-language[]" multiple>
+                <select id="target-language" name="targetLanguage[]" multiple>
                   <option>Deutsch</option>
                   <option>Englisch</option>
                   <option>Hindi</option>
@@ -344,11 +350,11 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label>Startdatum</label>
-                  <input type="date">
+                  <input type="date" name="startDate">
                 </div>
                 <div class="form-group half">
                   <label>Enddatum</label>
-                  <input type="date">
+                  <input type="date" name="endDate">
                 </div>
               </div>
 
@@ -356,15 +362,15 @@
               <div class="form-row">
                 <div class="form-group third">
                   <label>Uhrzeit von</label>
-                  <input type="time">
+                  <input type="time" name="timeFrom">
                 </div>
                 <div class="form-group third">
                   <label>Uhrzeit bis</label>
-                  <input type="time">
+                  <input type="time" name="timeTo">
                 </div>
                 <div class="form-group third">
                   <label>Anzahl Dolmetscher</label>
-                  <input type="number" min="1">
+                  <input type="number" name="interpreterCount" min="1">
                 </div>
               </div>
 
@@ -372,18 +378,30 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label>Ort</label>
-                  <input type="text">
+                  <input type="text" name="location">
                 </div>
                 <div class="form-group half">
                   <label>Anzahl Teilnehmer</label>
-                  <input type="number" min="1">
+                  <input type="number" name="participants" min="1">
                 </div>
               </div>
 
+              <!-- GDPR consent -->
+              <div class="form-row">
+                <label>
+                  <input type="checkbox" name="consent" value="yes" required>
+                  Ich stimme der Verarbeitung meiner Daten gemäß der <a href="/datenschutz.html"
+                    target="_blank">Datenschutzerklärung</a> zu.
+                </label>
+              </div>
+
+              <!-- Submit -->
               <div class="form-row">
                 <button type="submit">Absenden</button>
               </div>
             </div>
+
+            <div id="form-result"></div>
           </form>
         </div>
       </div>

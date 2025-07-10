@@ -117,9 +117,12 @@ section {
   width: 25px;
   height: 3px;
   background: var(--color-text);
+  left: 0
 }
 .hamburger::before { top: -8px; }
 .hamburger::after { top: 8px; }
+
+
 
 
 /* ============================
