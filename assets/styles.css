@@ -571,7 +571,7 @@ footer a {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   .nav-links.nav-open { display: flex; }
-  .nav-links.nav-open { display: none; }
+
   .nav-links a { margin: var(--spacing-md) 0; margin-left: 0; }
 
   .offer-form .form-group,
