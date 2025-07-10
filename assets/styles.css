@@ -428,7 +428,8 @@ section { padding: var(--spacing-lg) 0; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  margin-top:  var(--spacing-lg);
 }
 
 .offer-form .form-group {
