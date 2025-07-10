@@ -248,8 +248,8 @@
               <!-- 3rd row: Company Name & Branch -->
               <div class="form-row company-fields">
                 <div class="form-group half">
-                  <label>Name des Unternehmens</label>
-                  <input type="text" name="companyName" placeholder="Name des Unternehmens eingeben">
+                  <label>Name des Unternehmens <span>*</span></label>
+                  <input type="text" name="companyName" placeholder="Name des Unternehmens eingeben" required>
                 </div>
 
                 <div class="form-group half">
@@ -302,8 +302,8 @@
                 <div class="service-options">
                   <label><input type="radio" name="service" value="Telefon-Dolmetschen" required>
                     Telefon-Dolmetschen</label>
-                  <label><input type="radio" name="service" value="Vor-Ort-Dolmetschen"> Vor-Ort-Dolmetschen</label>
-                  <label><input type="radio" name="service" value="Video-Dolmetschen"> Video-Dolmetschen</label>
+                  <label><input type="radio" name="service" value="Vor-Ort-Dolmetschen" > Vor-Ort-Dolmetschen</label>
+                  <label><input type="radio" name="service" value="Video-Dolmetschen" > Video-Dolmetschen</label>
                 </div>
               </div>
 
@@ -319,8 +319,8 @@
 
               <!-- 1st row -->
               <div class="form-group half">
-                <label for="source-language">Ausgangssprache</label>
-                <select id="source-language" name="sourceLanguage[]" multiple>
+                <label for="source-language">Ausgangssprache  <span>*</span></label>
+                <select id="source-language" name="sourceLanguage[]" multiple required>
                   <option>Deutsch</option>
                   <option>Englisch</option>
                   <option>Hindi</option>
@@ -332,8 +332,8 @@
               </div>
 
               <div class="form-group half">
-                <label for="target-language">Zweitsprache</label>
-                <select id="target-language" name="targetLanguage[]" multiple>
+                <label for="target-language">Zweitsprache  <span>*</span></label>
+                <select id="target-language" name="targetLanguage[]" multiple required>
                   <option>Deutsch</option>
                   <option>Englisch</option>
                   <option>Hindi</option>
@@ -347,40 +347,40 @@
               <!-- 2nd row -->
               <div class="form-row">
                 <div class="form-group half">
-                  <label>Startdatum</label>
-                  <input type="date" name="startDate">
+                  <label>Startdatum  <span>*</span></label>
+                  <input type="date" name="startDate"required>
                 </div>
                 <div class="form-group half">
-                  <label>Enddatum</label>
-                  <input type="date" name="endDate">
+                  <label>Enddatum  <span>*</span></label>
+                  <input type="date" name="endDate"required>
                 </div>
               </div>
 
               <!-- 3rd row -->
               <div class="form-row">
                 <div class="form-group third">
-                  <label>Uhrzeit von</label>
-                  <input type="time" name="timeFrom">
+                  <label>Uhrzeit von <span>*</span></label>
+                  <input type="time" name="timeFrom"required>
                 </div>
                 <div class="form-group third">
-                  <label>Uhrzeit bis</label>
-                  <input type="time" name="timeTo">
+                  <label>Uhrzeit bis <span>*</span></label>
+                  <input type="time" name="timeTo"required>
                 </div>
                 <div class="form-group third">
-                  <label>Anzahl Dolmetscher</label>
-                  <input type="number" name="interpreterCount" min="1" placeholder="Anzahl Dolmetscher">
+                  <label>Anzahl Dolmetscher <span>*</span></label>
+                  <input type="number" name="interpreterCount" min="1" placeholder="Anzahl Dolmetscher"required>
                 </div>
               </div>
 
               <!-- 4th row -->
               <div class="form-row">
                 <div class="form-group half">
-                  <label>Ort</label>
-                  <input type="text" name="location" placeholder="Ort eingeben">
+                  <label>Ort <span>*</span></label>
+                  <input type="text" name="location" placeholder="Ort eingeben"required>
                 </div>
                 <div class="form-group half">
-                  <label>Anzahl Teilnehmer</label>
-                  <input type="number" name="participants" min="1" placeholder="Anzahl Teilnehmer">
+                  <label>Anzahl Teilnehmer <span>*</span></label>
+                  <input type="number" name="participants" min="1" placeholder="Anzahl Teilnehmer"required>
                 </div>
               </div>
 
