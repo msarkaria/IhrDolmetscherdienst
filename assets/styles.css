@@ -356,7 +356,7 @@ section { padding: var(--spacing-lg) 0; }
 }
 
 .offer-card h2 {
-  color: white;
+  color: white  !important;
   margin-bottom: var(--spacing-md);
 }
 
