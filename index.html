@@ -241,20 +241,19 @@
               <div class="form-row">
                 <div class="form-group full">
                   <label>Vollständiger Name <span>*</span></label>
-                  <input type="text" name="fullname" required>
+                  <input type="text" name="fullname" placeholder="Vollständigen Namen eingeben" required>
                 </div>
               </div>
 
-              <!-- 3rd row: Company Name & Branch (only if Unternehmen) -->
+              <!-- 3rd row: Company Name & Branch -->
               <div class="form-row company-fields">
                 <div class="form-group half">
                   <label>Name des Unternehmens</label>
-                  <input type="text" name="companyName">
+                  <input type="text" name="companyName" placeholder="Name des Unternehmens eingeben">
                 </div>
 
                 <div class="form-group half">
                   <label for="industry">Unternehmensbranche <span>*</span></label>
-
                   <select id="industry" name="industry" required>
                     <option value="" disabled selected>Bitte wählen...</option>
                     <option>Behörden / Öffentlicher Dienst</option>
@@ -276,7 +275,6 @@
                     <option>Privater Bereich</option>
                     <option>Sonstiges / Anderes</option>
                   </select>
-
                 </div>
               </div>
 
@@ -284,7 +282,7 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label>E-Mail <span>*</span></label>
-                  <input type="email" name="email" required>
+                  <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
                 </div>
                 <div class="form-group half">
                   <label>Telefonnummer <span>*</span></label>
@@ -293,7 +291,7 @@
                       <option>+43</option>
                       <option selected>+49</option>
                     </select>
-                    <input type="tel" name="phone" required>
+                    <input type="tel" name="phone" placeholder="Telefonnummer eingeben" required>
                   </div>
                 </div>
               </div>
@@ -370,7 +368,7 @@
                 </div>
                 <div class="form-group third">
                   <label>Anzahl Dolmetscher</label>
-                  <input type="number" name="interpreterCount" min="1">
+                  <input type="number" name="interpreterCount" min="1" placeholder="Anzahl Dolmetscher">
                 </div>
               </div>
 
@@ -378,11 +376,11 @@
               <div class="form-row">
                 <div class="form-group half">
                   <label>Ort</label>
-                  <input type="text" name="location">
+                  <input type="text" name="location" placeholder="Ort eingeben">
                 </div>
                 <div class="form-group half">
                   <label>Anzahl Teilnehmer</label>
-                  <input type="number" name="participants" min="1">
+                  <input type="number" name="participants" min="1" placeholder="Anzahl Teilnehmer">
                 </div>
               </div>
 
@@ -390,7 +388,7 @@
               <div class="form-row">
                 <label>
                   <input type="checkbox" name="consent" value="yes" required>
-                  Ich stimme der Verarbeitung meiner Daten gemäß der <a href="/datenschutz.html"
+                  Ich stimme der Verarbeitung meiner Daten gemäß der <a href="/privacy-policy"
                     target="_blank">Datenschutzerklärung</a> zu.
                 </label>
               </div>
@@ -401,6 +399,7 @@
               </div>
             </div>
 
+            <!-- Result message -->
             <div id="form-result"></div>
           </form>
         </div>

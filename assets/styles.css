@@ -457,7 +457,8 @@ section { padding: var(--spacing-lg) 0; }
 }
 
 .offer-form .phone-input select {
-  flex: 0 0 100%;
+  flex: 0 0 30%;
+  min-width: 60px;
 }
 
 .offer-form .service-options {
