@@ -426,7 +426,14 @@
     navLinks.classList.toggle('nav-open');
   });
 
+  // ✅ Close the menu when any link is clicked
+  const links = navLinks.querySelectorAll('a');
 
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('nav-open');
+    });
+  });
 
 
   document.querySelectorAll('input[name="type"]').forEach(radio => {
