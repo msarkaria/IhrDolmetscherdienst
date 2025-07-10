@@ -338,7 +338,7 @@ section { padding: var(--spacing-lg) 0; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.offer-card,
+
 .offer-form {
   background: #fff;
   color: var(--color-text);
@@ -347,18 +347,30 @@ section { padding: var(--spacing-lg) 0; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.offer-card {
+  
+  color: white;
+  padding: var(--spacing-lg);
+  
+  
+}
+
 .offer-card h2 {
-  color: var(--color-primary);
+  color: white;
   margin-bottom: var(--spacing-md);
 }
 
-.offer-card p { margin-bottom: var(--spacing-md); }
+.offer-card p { 
+  margin-bottom: var(--spacing-md); 
+  color:white
+}
 
 .contact-box {
   background: var(--color-light-bg, #f9f9f9);
   padding: var(--spacing-md);
   border-radius: 0.25rem;
   margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .offer-card .phone {
