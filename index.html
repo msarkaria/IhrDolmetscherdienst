@@ -481,9 +481,11 @@
 
     // 1) On page load: set the active link based on the URL
     if (window.location.pathname.includes('index-en')) {
-      document.querySelector('.lang-link[href*="index-en.html"]').classList.add('active');
+      document.querySelector('.lang-switch-desktop .lang-link[href*="index-en.html"]').classList.add('active');
+      document.querySelector('.lang-switch .lang-link[href*="index-en.html"]').classList.add('active');
     } else {
-      document.querySelector('.lang-link[href*="index.html"]').classList.add('active');
+      document.querySelector('.lang-switch-desktop .lang-link[href*="index.html"]').classList.add('active');
+      document.querySelector('.lang-switch .lang-link[href*="index.html"]').classList.add('active');
     }
 
     // 2) When a user clicks, toggle active class
