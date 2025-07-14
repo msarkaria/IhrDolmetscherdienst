@@ -301,29 +301,85 @@ section { padding: var(--spacing-lg) 0; }
    7. language & Sections
    ============================ */
 
+.languages-section h2 {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  position: relative;
+}
+.languages-section h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  display: block;
+  margin: var(--spacing-sm) auto 0;
+  border-radius: 2px;
+}
+.languages-section {
+  background: var(--color-light-bg);
+  padding: var(--spacing-lg) 0;
+}
+
+/* 2. Intro Paragraph */
+.languages-section > .container > p:first-of-type {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* 3. Languages Grid */
 .languages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--spacing-lg);
-  justify-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto var(--spacing-lg);
+  max-width: calc(var(--container-max) + var(--spacing-lg) * 2);
 }
 
+/* 4. Language Cards */
 .language-item {
   background: var(--color-light-bg, #f9f9f9);
-  padding: var(--spacing-md);
   border-radius: 0.5rem;
+  padding: var(--spacing-md);
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  cursor: default;
 }
 
+/* 5. Hover & Focus */
+.language-item:hover,
+.language-item:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  outline: none;
+}
+
+/* 6. Flag & Label Styling */
 .language-item .flag {
-  font-size: 2rem;
-  display: block;
+  font-size: 2.5rem;
   margin-bottom: var(--spacing-sm);
+  display: block;
 }
 
 .language-item .language-name {
   font-weight: 600;
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+.language-item:hover .language-name,
+.language-item:focus .language-name {
+  color: var(--color-primary);
+}
+
+/* 7. Final Call-to-Action */
+.languages-section > .container > p:last-of-type {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-text);
 }
 
 #branchen {
