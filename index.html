@@ -27,7 +27,7 @@
       <nav class="nav-links">
         <div class="lang-switch">
           <a href="index-en.html" class="lang-link">EN</a> |
-          <a href="index.html" class="lang-link">DE</a>
+          <a href="index.html" class="lang-link active">DE</a>
         </div>
         <a href="#hero">Home</a>
         <a href="#leistungen">Leistungen</a>
@@ -476,6 +476,27 @@
     });
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const langs = document.querySelectorAll('.lang-link');
+
+    // 1) On page load: set the active link based on the URL
+    if (window.location.pathname.includes('index-en')) {
+      document.querySelector('.lang-link[href*="index-en.html"]').classList.add('active');
+    } else {
+      document.querySelector('.lang-link[href*="index.html"]').classList.add('active');
+    }
+
+    // 2) When a user clicks, toggle active class
+    langs.forEach(link => {
+      link.addEventListener('click', () => {
+        // remove from all
+        langs.forEach(l => l.classList.remove('active'));
+        // add to the clicked one
+        link.classList.add('active');
+        // let the browser navigate normally to the new page
+      });
+    });
+  });
 
 
 </script>
