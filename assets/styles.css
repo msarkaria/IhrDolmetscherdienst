@@ -418,17 +418,51 @@ section { padding: var(--spacing-lg) 0; }
   text-align: center;
 }
 
+/* ============================
+   Branchen Section Styling
+   ============================ */
+
+/* 1. Section Wrapper & Background */
 #branchen {
+  background: var(--color-bg);
   padding: var(--spacing-lg) 0;
 }
 
+/* 2. Heading & Underline */
+#branchen h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+#branchen h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  margin: var(--spacing-sm) auto 0;
+  border-radius: 2px;
+}
+
+/* 3. Intro Paragraph */
+#branchen > .container > p {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* 4. Industries Grid */
 .industries-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }
 
+/* 5. Industry Items */
 .industry-item {
   background: var(--color-light-bg, #f9f9f9);
   padding: var(--spacing-md);
@@ -436,8 +470,23 @@ section { padding: var(--spacing-lg) 0; }
   text-align: center;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
+/* 6. Hover & Focus States */
+.industry-item:hover,
+.industry-item:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  cursor: default;
+}
+
+/* 7. Final Call-to-Action */
+#branchen > .container > p.text-center:last-of-type {
+  margin-top: var(--spacing-lg);
+  color: var(--color-text);
+}
 
 /* ============================
    8. Contact Section
