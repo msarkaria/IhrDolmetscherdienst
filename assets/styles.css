@@ -221,24 +221,85 @@ section { padding: var(--spacing-lg) 0; }
    7. Features & Sections
    ============================ */
 
-.features, .portfolio, .testimonials {
+
+
+/* 1. Section Heading Styling */
+.features-section h2 {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  text-align: center;
+}
+.features-section h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  display: block;
+  margin: var(--spacing-sm) auto 0;
+  border-radius: 2px;
+}
+
+/* 2. Features Grid Layout */
+.features {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
 }
 
+/* 3. Card Base Styles */
 .feature-card {
   background: #fff;
-  padding: var(--spacing-lg);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 4. Icon & Heading Spacing */
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--spacing-md);
+  fill: var(--color-primary);
+  flex-shrink: 0;
+}
+.feature-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 5. Body Text Readability */
+.feature-card p {
+  flex-grow: 1;
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
   text-align: center;
 }
 
-.feature-icon {
-  width: 48px;
-  margin-bottom: var(--spacing-sm);
+/* 6. Hover & Focus States */
+.feature-card:hover,
+.feature-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
+
+/* 7. Responsive Collapse */
+@media (max-width: 800px) {
+  .feature-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ============================
+   7. language & Sections
+   ============================ */
 
 .languages-grid {
   display: grid;
