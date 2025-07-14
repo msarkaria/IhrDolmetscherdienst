@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Interpreting Service</title>
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- ✅ Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav-container">
+
+      <div class="logo">
+        <a href="#hero" class="logo-text">Your Interpreting Service</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav-links">
+        <div class="lang-switch">
+          <a href="index-en.html" class="lang-link">EN</a> |
+          <a href="index.html" class="lang-link active">DE</a>
+        </div>
+        <a href="#hero">Home</a>
+        <a href="#leistungen">Services</a>
+        <a href="#sprachen">Languages</a>
+        <a href="#branchen">Industries</a>
+        <a href="#team">Our Team</a>
+        <a href="#styled-form" class="btn-primary">Request</a>
+      </nav>
+      <div class="lang-switch-desktop">
+        <a href="index-en.html" class="lang-link">EN</a> |
+        <a href="index.html" class="lang-link">DE</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero -->
+  <section id="hero" class="hero-section">
+    <div class="container text-center">
+      <div class="container text-center">
+        <h1>Your Interpreting Service – Your bridge to successful communication.</h1>
+        <p>We enable seamless understanding – competent and discreet.</p>
+        <p>Whether companies, authorities, or private individuals – we create connections where language divides.</p>
+        <a href="#styled-form" class="btn-primary">Request</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Features -->
+  <section id="leistungen" class="features-section">
+    <div class="container">
+      <h2 class="text-center">Services</h2>
+
+      <div class="features mt-lg">
+        <div class="feature-card">
+          <!-- Telephone Icon -->
+          <article class="feature-card">
+            <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21 3 13.93 3 5.5a1 1 0 011-1H7.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"
+                fill="var(--color-primary)" />
+            </svg>
+            <h3>Telephone Interpreting</h3>
+            <p>
+              Instant, reliable support by phone – flexible and available worldwide.
+              Our professional interpreters help you overcome language barriers
+              spontaneously and securely.
+            </p>
+          </article>
+        </div>
+        <div class="feature-card">
+          <!-- Video Icon -->
+          <article class="feature-card">
+            <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 10.5V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.5l4 4v-11l-4 4z"
+                fill="var(--color-primary)" />
+            </svg>
+            <h3>Video Interpreting</h3>
+            <p>
+              Modern interpreting for online meetings, video conferences,
+              and digital events. Flexible, secure, and location-independent –
+              ideal for your digital business processes.
+            </p>
+          </article>
+        </div>
+        <div class="feature-card">
+          <!-- On-site Icon -->
+          <article class="feature-card">
+            <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
+                fill="var(--color-primary)" />
+            </svg>
+            <h3>On-site Interpreting</h3>
+            <p>
+              Personal language mediation on-site – professional, discreet, and
+              tailored to your individual requirements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Languages -->
+  <section id="sprachen" class="language-section">
+    <div class="container">
+      <h2 class="text-center">Languages</h2>
+      <p class="text-center">We offer you excellent interpreting services in numerous languages:</p>
+      <div class="languages-grid mt-lg">
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="German">🇩🇪</span>
+          <span class="language-name">German</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="English">🇬🇧</span>
+          <span class="language-name">English</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="Hindi">🇮🇳</span>
+          <span class="language-name">Hindi</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="Urdu">🇵🇰</span>
+          <span class="language-name">Urdu</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="Punjabi">🇮🇳</span>
+          <span class="language-name">Punjabi</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="Bengali">🇧🇩</span>
+          <span class="language-name">Bengali</span>
+        </div>
+        <div class="language-item">
+          <span class="flag" role="img" aria-label="Arabic">🇸🇦</span>
+          <span class="language-name">Arabic</span>
+        </div>
+      </div>
+      <p class="text-center mt-lg">Contact us if you need another language!</p>
+    </div>
+  </section>
+
+  <!-- Section 5: Our Team -->
+  <section id="team" class="team-section">
+    <div class="container">
+      <h2 class="text-center">Our Team</h2>
+      <p class="text-center">
+        Our team consists of experienced, certified, and multilingual interpreters.
+
+        We support you professionally, flexibly, and reliably – on-site, by phone, and via video.
+
+        Thanks to our broad language skills, intercultural experience, and industry knowledge,
+        we find the right solution for every situation. Trust our expertise to ensure your communication succeeds.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4: Industries -->
+  <section id="branchen" class="portfolio-section">
+    <div class="container">
+      <h2 class="text-center">Industries</h2>
+      <p class="text-center">We interpret for clients from various sectors, including:</p>
+      <div class="industries-grid mt-lg">
+        <div class="industry-item">Authorities / Public Sector</div>
+        <div class="industry-item">Medical / Healthcare</div>
+        <div class="industry-item">Justice / Legal</div>
+        <div class="industry-item">Business / Commerce</div>
+        <div class="industry-item">Education / School / University</div>
+        <div class="industry-item">Social Services / Social Work</div>
+        <div class="industry-item">Technology / IT</div>
+        <div class="industry-item">Tourism / Hospitality</div>
+        <div class="industry-item">Marketing / Advertising</div>
+        <div class="industry-item">Culture / Arts</div>
+        <div class="industry-item">Trade Shows / Events</div>
+        <div class="industry-item">Construction / Architecture</div>
+        <div class="industry-item">Industry / Manufacturing</div>
+        <div class="industry-item">Finance / Insurance</div>
+        <div class="industry-item">HR / Human Resources</div>
+        <div class="industry-item">Science / Research</div>
+        <div class="industry-item">Private Sector</div>
+        <div class="industry-item">Other / Miscellaneous</div>
+      </div>
+      <p class="text-center mt-lg">Whether individual, company, or institution – we are your competent partner for professional language mediation in every situation.</p>
+    </div>
+  </section>
+
+  <!-- Section 6: Contact (Two-Step Form) -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid mt-lg">
+        <!-- Left Offer Card -->
+        <div class="offer-card">
+          <h2>Want to reach us?</h2>
+          <p>We are gladly available for you – personal, straightforward, and discreet.</p>
+          <div class="contact-box">
+            <div class="contact-item">
+              <span class="contact-label">E-Mail:</span>
+              <a href="mailto:contact@ihrdolmetscherdienst.at" class="contact-value">contact@ihrdolmetscherdienst.at</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Telephone:</span>
+              <a href="tel:+4364646161616" class="contact-value">+43 6464 6161616</a>
+            </div>
+          </div>
+          <p>Or simply use our contact form. We will answer your inquiry promptly and reliably.</p>
+          <p>Trust our experience – we advise you personally and ensure that your message arrives safely.</p>
+        </div>
+        <!-- Right Two-Step Styled Form -->
+        <div class="offer-form">
+          <form id="styled-form">
+            <!-- Honeypot: hidden field -->
+            <input type="text" name="companyWebsite" style="display:none;">
+
+            <!-- Step 1 -->
+            <div class="form-step" id="step-1">
+              <h2>Inquiry</h2>
+              <p>Use our form to describe your request.</p>
+
+              <!-- 1st row: Type of inquiry -->
+              <div class="form-row form-group">
+                <label>Type of inquiry <span>*</span></label>
+                <div class="radio-group">
+                  <label><input type="radio" name="type" value="company" checked> Company</label>
+                  <label><input type="radio" name="type" value="private"> Private</label>
+                </div>
+              </div>
+
+              <!-- 2nd row: Full name -->
+              <div class="form-row">
+                <div class="form-group full">
+                  <label>Full Name <span>*</span></label>
+                  <input type="text" name="fullname" placeholder="Enter your full name" required>
+                </div>
+              </div>
+
+              <!-- 3rd row: Company Name & Industry -->
+              <div class="form-row company-fields">
+                <div class="form-group half">
+                  <label>Company Name <span>*</span></label>
+                  <input type="text" name="companyName" placeholder="Enter company name" required>
+                </div>
+
+                <div class="form-group half">
+                  <label for="industry">Industry <span>*</span></label>
+                  <select id="industry" name="industry" required>
+                    <option value="" disabled selected>Please choose...</option>
+                    <option>Authorities / Public Sector</option>
+                    <option>Medical / Healthcare</option>
+                    <option>Justice / Legal</option>
+                    <option>Business / Commerce</option>
+                    <option>Education / School / University</option>
+                    <option>Social Services / Social Work</option>
+                    <option>Technology / IT</option>
+                    <option>Tourism / Hospitality</option>
+                    <option>Marketing / Advertising</option>
+                    <option>Culture / Arts</option>
+                    <option>Trade Shows / Events</option>
+                    <option>Construction / Architecture</option>
+                    <option>Industry / Manufacturing</option>
+                    <option>Finance / Insurance</option>
+                    <option>HR / Human Resources</option>
+                    <option>Science / Research</option>
+                    <option>Private Sector</option>
+                    <option>Other / Miscellaneous</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- 4th row: Email + Phone -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label>Email <span>*</span></label>
+                  <input type="email" name="email" placeholder="Your email address" required>
+                </div>
+                <div class="form-group half">
+                  <label>Phone Number <span>*</span></label>
+                  <div class="phone-input">
+                    <select name="countryCode">
+                      <option>+43</option>
+                      <option selected>+49</option>
+                    </select>
+                    <input type="tel" name="phone" placeholder="Enter phone number" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5th row: Services -->
+              <div class="form-row">
+                <h3>Which service? <span>*</span></h3>
+                <div class="service-options">
+                  <label><input type="radio" name="service" value="Telephone Interpreting" required>
+                    Telephone Interpreting</label>
+                  <label><input type="radio" name="service" value="On-site Interpreting" >
+                    On-site Interpreting</label>
+                  <label><input type="radio" name="service" value="Video Interpreting" >
+                    Video Interpreting</label>
+                </div>
+              </div>
+
+              <!-- Next button -->
+              <div class="form-row">
+                <button type="button" id="next-btn">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" id="step-2" style="display:none;">
+              <h2>Interpreting Details</h2>
+
+              <!-- 1st row -->
+              <div class="form-group half">
+                <label for="source-language">Source Language <span>*</span></label>
+                <select id="source-language" name="sourceLanguage[]" multiple required>
+                  <option>German</option>
+                  <option>English</option>
+                  <option>Hindi</option>
+                  <option>Urdu</option>
+                  <option>Punjabi</option>
+                  <option>Bengali</option>
+                  <option>Arabic</option>
+                </select>
+              </div>
+
+              <div class="form-group half">
+                <label for="target-language">Target Language <span>*</span></label>
+                <select id="target-language" name="targetLanguage[]" multiple required>
+                  <option>German</option>
+                  <option>English</option>
+                  <option>Hindi</option>
+                  <option>Urdu</option>
+                  <option>Punjabi</option>
+                  <option>Bengali</option>
+                  <option>Arabic</option>
+                </select>
+              </div>
+
+              <!-- 2nd row -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label>Start Date <span>*</span></label>
+                  <input type="date" name="startDate" required>
+                </div>
+                <div class="form-group half">
+                  <label>End Date <span>*</span></label>
+                  <input type="date" name="endDate" required>
+                </div>
+              </div>
+
+              <!-- 3rd row -->
+              <div class="form-row">
+                <div class="form-group third">
+                  <label>Time From <span>*</span></label>
+                  <input type="time" name="timeFrom" required>
+                </div>
+                <div class="form-group third">
+                  <label>Time To <span>*</span></label>
+                  <input type="time" name="timeTo" required>
+                </div>
+                <div class="form-group third">
+                  <label>Number of Interpreters <span>*</span></label>
+                  <input type="number" name="interpreterCount" min="1" placeholder="Number of interpreters" required>
+                </div>
+              </div>
+
+              <!-- 4th row -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label>Location <span>*</span></label>
+                  <input type="text" name="location" placeholder="Enter location" required>
+                </div>
+                <div class="form-group half">
+                  <label>Number of Participants <span>*</span></label>
+                  <input type="number" name="participants" min="1" placeholder="Number of participants" required>
+                </div>
+              </div>
+
+              <!-- GDPR consent -->
+              <div class="form-row">
+                <label>
+                  <input type="checkbox" name="consent" value="yes" required>
+                  I agree to the processing of my data in accordance with the <a href="/privacy-policy"
+                    target="_blank">Privacy Policy</a>.
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-row">
+                <button type="submit">Submit</button>
+              </div>
+            </div>
+
+            <!-- Result message -->
+            <div id="form-result"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Footer -->
+  <footer>
+    <a href="impressum.html">Imprint</a> |
+    <a href="datenschutz.html">Privacy Policy</a>
+    <br>
+    © 2025 Your Interpreting Service
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
