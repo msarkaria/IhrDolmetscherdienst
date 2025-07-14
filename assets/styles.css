@@ -95,17 +95,29 @@ header {
   color: var(--color-primary);
   text-decoration: underline;
 }
-.btn-primary:hover,
-.btn-primary:focus {
-  background: color-mix(in srgb, var(--color-primary) 80%, #000 20%); /* subtle darken on hover */
-  outline: 2px solid var(--color-accent);  /* improve keyboard focus visibility */
-}
-
 .btn-primary {
   background: var(--color-primary);
   color: #fff;
   padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-primary);   /* ← always have the border */
   border-radius: 4px;
+  cursor: pointer;
+  transition: 
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* 2. Hover / focus: invert colors but keep (and recolor) the border */
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #fff;                          /* white fill */
+  color: var(--color-primary);               /* red text */
+  border-color: var(--color-primary);        /* ensure the border stays red */
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 section {
   scroll-margin-top: 60px;
