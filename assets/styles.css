@@ -382,6 +382,42 @@ section { padding: var(--spacing-lg) 0; }
   color: var(--color-text);
 }
 
+/* ============================
+   7. Team section
+   ============================ */
+
+
+.team-section {
+  background: var(--color-light-bg, #f9f9f9);
+  padding: var(--spacing-lg) 0;
+}
+
+/* 2. Heading & Underline */
+.team-section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+.team-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  margin: var(--spacing-sm) auto 0;
+  border-radius: 2px;
+}
+
+/* 3. Intro Paragraph */
+.team-section p {
+  max-width: 800px;                   /* constrain line length */
+  margin: var(--spacing-md) auto;     /* center & add vertical spacing */
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--color-text);
+  text-align: center;
+}
+
 #branchen {
   padding: var(--spacing-lg) 0;
 }
