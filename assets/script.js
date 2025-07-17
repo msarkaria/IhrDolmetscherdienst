@@ -92,3 +92,62 @@ if (btn && overlay && span) {
       });
     });
   });
+
+  // ——— Form submission to Google Apps Script ———
+const form = document.getElementById('styled-form');
+if (form) {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    // collect all form fields
+    const formData = new FormData(form);
+    const data = {};
+
+    // for multi-selects (select[multiple]), FormData.getAll returns an array
+    for (let [key, value] of formData.entries()) {
+      if (data[key]) {
+        // accumulate repeated keys (e.g. multiple checkboxes or multi-select)
+        Array.isArray(data[key]) 
+          ? data[key].push(value)
+          : data[key] = [ data[key], value ];
+      } else {
+        data[key] = value;
+      }
+    }
+
+    // include origin for your domain‐check in doPost
+    data.siteOrigin = window.location.origin;
+
+    // send to your Apps Script
+    try {
+      const resp = await fetch(
+        'https://script.google.com/macros/s/AKfycbzYSVp7Vff_-Rus66d91c4vQHi025dmEj4W5b3xQSpELu6An2HObmGQI0Bb51w2U8i6/exec',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        }
+      );
+      const result = await resp.json();
+
+      if (result.result === 'success') {
+        // show a thank‐you message
+        document.getElementById('form-result').innerHTML = 
+          '<p class="success">Vielen Dank! Ihre Anfrage wurde versendet.</p>';
+        form.reset();
+        // optionally jump back to step 1
+        document.getElementById('step-2').style.display = 'none';
+        document.getElementById('step-1').style.display = 'block';
+      } else if (result.result === 'spam_detected') {
+        document.getElementById('form-result').innerHTML = 
+          '<p class="error">Spam‐Verdacht erkannt. Ihre Anfrage wurde nicht gesendet.</p>';
+      } else {
+        throw new Error(result.message || 'Unknown error');
+      }
+    } catch (err) {
+      console.error(err);
+      document.getElementById('form-result').innerHTML = 
+        '<p class="error">Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</p>';
+    }
+  });
+}
