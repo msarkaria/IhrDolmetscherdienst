@@ -139,7 +139,7 @@ if (form) {
         'https://script.google.com/macros/s/AKfycbyMJN1d59MyqXjW2xP96N3MYr_OuReGNurDq2LRS-dX1OHLnRGystSAMxnEF8MP48Gs/exec',
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': "text/plain; charset=utf-8" },
           body: JSON.stringify(data),
         }
       );
