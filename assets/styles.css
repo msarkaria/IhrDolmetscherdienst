@@ -215,7 +215,7 @@ section { padding: var(--spacing-lg) 0; }
   font-size: var(--fs-md);
   margin-bottom: var(--spacing-lg);
 }*/
-* Hero Section */
+/* Hero Section */
 section.hero-section {
   /*background:
     linear-gradient(to right, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.3) 100%),
@@ -245,14 +245,14 @@ section.hero-section {
   line-height: 1.2;
   margin-bottom: 1.5rem;
   white-space: normal;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  /*text-shadow: 0 1px 4px rgba(0,0,0,0.6);*/
 }
 
 .hero-content p {
   font-size: var(--fs-md);
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  /*text-shadow: 0 1px 4px rgba(0,0,0,0.6);*/
 }
 .hero-section {
   max-width: 1400px;
