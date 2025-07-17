@@ -122,6 +122,10 @@ header {
 section {
   scroll-margin-top: 60px;
 }
+
+#styled-form {
+  scroll-margin-top: 60px;
+}
 .nav-toggle { display: none; }
 
 .hamburger {
