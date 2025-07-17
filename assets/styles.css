@@ -220,13 +220,13 @@ section.hero-section {
   /*background:
     linear-gradient(to right, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.3) 100%),
     url('https://raw.githubusercontent.com/ot8rv3xj/ot8rv3xj.github.io/main/assets/image.png') center/cover no-repeat;*/
-  background: var(--color-accent) url('hero-bg.jpg') center/cover no-repeat;
+  background:var(--color-accent);
   padding: 4rem 0;    /* generous top/bottom spacing */
   color: #fff;
- /*min-height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-items: center;*/
+  align-items: center;
 }
 
 .hero-content {
