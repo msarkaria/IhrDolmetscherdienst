@@ -134,37 +134,36 @@ if (form) {
     data.siteOrigin = window.location.origin;
 
     // send to your Apps Script
-    try {
-      const resp = await fetch(
-        'https://script.google.com/macros/s/AKfycbwfKtoCOG1qkPHOF3JSjRMxIqhsf0KYQ6It7xNDj7Z0ikAPZ-Y30BJgaykadfk_B6R9/exec',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': "text/plain; charset=utf-8" },
-          body: JSON.stringify(data),
-        }
-      );
-      const result = await resp.json();
-
-      if (result.result === 'success') {
-        // show a thank‐you message
-        document.getElementById('form-result').innerHTML =
-          '<p class="success">Vielen Dank! Ihre Anfrage wurde versendet.</p>';
-        form.reset();
-        updateCompanyFields();  
-        // optionally jump back to step 1
-        $('#source-language, #target-language').val(null).trigger('change');
-        document.getElementById('step-2').style.display = 'none';
-        document.getElementById('step-1').style.display = 'block';
-      } else if (result.result === 'spam_detected') {
-        document.getElementById('form-result').innerHTML =
-          '<p class="error">Spam‐Verdacht erkannt. Ihre Anfrage wurde nicht gesendet.</p>';
-      } else {
-        throw new Error(result.message || 'Unknown error');
-      }
-    } catch (err) {
-      console.error(err);
-      document.getElementById('form-result').innerHTML =
-        '<p class="error">Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.</p>';
+    fetch(
+    'https://script.google.com/macros/s/AKfycbwfK…/exec',
+    {
+      method: 'POST',
+      mode:   'no-cors',      // ← NO preflight
+      body:   JSON.stringify(data)
     }
+  )
+  // we won’t get a real response back, so just assume success:
+  .then(() => {
+  // show thank-you
+  document.getElementById('form-result').innerHTML =
+    '<p class="success">Vielen Dank! Ihre Anfrage wurde versendet.</p>';
+
+  // reset native fields
+  form.reset();
+  updateCompanyFields();
+
+  // reset multi-selects
+  $('#source-language, #target-language')
+    .val(null)
+    .trigger('change');
+
+  // go back to step-1
+  document.getElementById('step-2').style.display = 'none';
+  document.getElementById('step-1').style.display = 'block';
+})
+  .catch(() => {
+    document.getElementById('form-result').innerHTML =
+      '<p class="error">Beim Senden ist ein Fehler aufgetreten.</p>';
+  });
   });
 }
