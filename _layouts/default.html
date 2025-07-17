@@ -12,13 +12,21 @@
 
 <body>
  
-  {% include "header-{{ page.lang }}.html" %}
+  {% if page.lang == "de" %}
+  {% include "header-de.html" %}
+{% elsif page.lang == "en" %}
+  {% include "header-en.html" %}
+{% endif %}
 
   <main>
     {{ content }}
   </main>
 
-  {% include "footer-{{ page.lang }}.html" %}
+  {% if page.lang == "de" %}
+    {% include footer-de.html %}
+  {% elsif page.lang == "en" %}
+    {% include footer-en.html %}
+  {% endif %}
  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </body>
 </html>
