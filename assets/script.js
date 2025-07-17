@@ -136,7 +136,7 @@ if (form) {
     // send to your Apps Script
     try {
       const resp = await fetch(
-        'https://script.google.com/macros/s/AKfycbzYSVp7Vff_-Rus66d91c4vQHi025dmEj4W5b3xQSpELu6An2HObmGQI0Bb51w2U8i6/exec',
+        'https://script.google.com/macros/s/AKfycbyMJN1d59MyqXjW2xP96N3MYr_OuReGNurDq2LRS-dX1OHLnRGystSAMxnEF8MP48Gs/exec',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
