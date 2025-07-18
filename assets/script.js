@@ -161,12 +161,12 @@ if (form) {
   // we won’t get a real response back, so just assume success:
   .then(() => {
   // show thank-you
-  document.getElementById('form-result').innerHTML =
-    '<p class="success">Vielen Dank! Ihre Anfrage wurde versendet.</p>';
+  document.getElementById('form-result').style.display = 'block'
+  document.getElementById('form-success').style.display = 'block'
+    
 
-  // reset native fields
-  form.reset();
-  updateCompanyFields();
+ 
+
 
   // reset multi-selects
   $('#source-language, #target-language')
@@ -178,8 +178,27 @@ if (form) {
   document.getElementById('step-1').style.display = 'block';
 })
   .catch(() => {
-    document.getElementById('form-result').innerHTML =
-      '<p class="error">Beim Senden ist ein Fehler aufgetreten.</p>';
+    document.getElementById('form-result').style.display = 'block'
+    document.getElementById('form-result-error').style.display = 'block'
   });
   });
 }
+
+document.getElementById(`new-request`)
+        .addEventListener('click', () => {  
+  form.reset();
+  updateCompanyFields();
+  document.getElementById('step-2').style.display = 'none';
+  document.getElementById('step-1').style.display = 'block';
+  document.getElementById('form-result').style.display = 'none'
+  document.getElementById('form-success').style.display = 'none'
+   document.getElementById('form-result-error').style.display = 'none'
+ });
+document.getElementById(`retry`)
+        .addEventListener('click', () => { form.reset();
+  updateCompanyFields();
+  document.getElementById('step-2').style.display = 'none';
+  document.getElementById('step-1').style.display = 'block';
+  document.getElementById('form-result').style.display = 'none'
+  document.getElementById('form-success').style.display = 'none'
+ document.getElementById('form-result-error').style.display = 'none' });
