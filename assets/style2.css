@@ -141,8 +141,8 @@ header {
 }
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--color-on-primary);
-  color: var(--color-primary);
+  background: var(--color-accent);
+ 
   border-color: var(--color-primary);
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -233,7 +233,7 @@ section.hero-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
-  max-width: 1400px;
+  /*max-width: 1400px;*/
   margin: 0 auto;
 }
 
