@@ -220,6 +220,7 @@ section {
     justify-content: center;
     width: 100%;
   }
+  .lang-switch-desktop { display: none; }
 }
 
 /* ============================
@@ -531,7 +532,7 @@ section.hero-section {
 }
 
 #contact {
-  background: var(--color-accent);
+  background: #FFF;
   color: var(--color-on-accent);
   padding: var(--spacing-lg) 0;
 }
