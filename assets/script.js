@@ -54,8 +54,24 @@ updateCompanyFields();
 
 // Next button logic
 document.getElementById('next-btn').addEventListener('click', () => {
-  document.getElementById('step-1').style.display = 'none';
-  document.getElementById('step-2').style.display = 'block';
+  const step1 = document.getElementById('step-1');
+  const step2 = document.getElementById('step-2');
+   const controls = Array.from(
+    step1.querySelectorAll('input, select, textarea')
+  ).filter(el => !el.disabled && el.offsetParent !== null);
+
+  // Find the first invalid control (if any)
+  const firstInvalid = controls.find(el => !el.checkValidity());
+
+  if (firstInvalid) {
+    // This will trigger the native tooltip/message
+    firstInvalid.reportValidity();
+    firstInvalid.focus();
+    return; // abort—do not advance
+  }
+
+  step1.style.display = 'none';
+  step2.style.display = 'block';
 });
 
 document.querySelectorAll('a[href="#styled-form"]').forEach(link => {
