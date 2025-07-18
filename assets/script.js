@@ -129,7 +129,7 @@ const form = document.getElementById('styled-form');
 if (form) {
   form.addEventListener('submit', async e => {
     e.preventDefault();
-
+    form.classList.add('loading');
     // collect all form fields
     const formData = new FormData(form);
     const data = {};
@@ -161,6 +161,7 @@ if (form) {
   // we won’t get a real response back, so just assume success:
   .then(() => {
   // show thank-you
+  form.classList.remove('loading');
   document.getElementById('form-result').style.display = 'block'
   document.getElementById('form-success').style.display = 'block'
     
@@ -178,6 +179,7 @@ if (form) {
   document.getElementById('step-1').style.display = 'none';
 })
   .catch(() => {
+    form.classList.remove('loading');
     document.getElementById('form-result').style.display = 'block'
     document.getElementById('form-result-error').style.display = 'block'
     document.getElementById('step-2').style.display = 'none';
