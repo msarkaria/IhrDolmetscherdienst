@@ -718,7 +718,7 @@ footer a {
 
 /* Success variant */
 #form-result .result.success {
-  background: var(--color-tertiary-container);
+  
   color: var(--color-on-tertiary-container);
   border-radius: 0.5rem;
 }
@@ -729,7 +729,7 @@ footer a {
 
 /* Error variant */
 #form-result .result.error{
-  background: var(--color-error-container);
+ 
   color: var(--color-on-error-container);
   border-radius: 0.5rem;
 }
@@ -745,7 +745,7 @@ footer a {
   margin: 0.5rem 0 1rem;
 }
 
-/* Action buttons */
+/* Action buttons 
 #form-result .result .btn-primary {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -755,9 +755,9 @@ footer a {
   letter-spacing: 0.05em;
   border-radius: 4px;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-}
+}*/
 
-/* Success button uses primary-container */
+/* Success button uses primary-container 
 #form-result .result.success .btn-primary {
   background: var(--color-primary-container);
   color: var(--color-on-primary-container);
@@ -768,9 +768,9 @@ footer a {
   background: var(--color-primary);
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+}*/
 
-/* Error button uses error color */
+/* Error button uses error color
 #form-result .result.error .btn-primary {
   background: var(--color-error);
   color: var(--color-on-error);
@@ -781,7 +781,7 @@ footer a {
   background: var(--color-error-container);
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+} */
 
 /* Show the block by removing `display:none` in JS */
 #form-result.show-success    .success,

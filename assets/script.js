@@ -175,11 +175,13 @@ if (form) {
 
   // go back to step-1
   document.getElementById('step-2').style.display = 'none';
-  document.getElementById('step-1').style.display = 'block';
+  document.getElementById('step-1').style.display = 'none';
 })
   .catch(() => {
     document.getElementById('form-result').style.display = 'block'
     document.getElementById('form-result-error').style.display = 'block'
+    document.getElementById('step-2').style.display = 'none';
+  document.getElementById('step-1').style.display = 'none';
   });
   });
 }
