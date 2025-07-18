@@ -510,6 +510,7 @@ section.hero-section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 .contact-item {
   display: flex;
@@ -517,14 +518,14 @@ section.hero-section {
 }
 .contact-label {
   font-size: var(--fs-sm);
-  color: var(--color-text);
+  color: var(--color-primary);
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 .contact-value {
-  font-size: var(--fs-lg);
+  /*font-size: var(--fs-lg);*/
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-accent);
   word-break: break-word;
 }
 .contact-value:hover {
