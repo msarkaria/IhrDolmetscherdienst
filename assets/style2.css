@@ -142,7 +142,7 @@ header {
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background: var(--color-accent);
- 
+  color: var(--color-on-primary);
   border-color: var(--color-primary);
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -663,7 +663,8 @@ section.hero-section {
   cursor: pointer;
   transition: background 0.3s;
 }
-.offer-form button:hover {
+.offer-form button:hover, 
+.offer-form button:focus-visible{
   background: var(--color-accent);
 }
 
