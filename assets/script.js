@@ -151,7 +151,7 @@ if (form) {
 
     // send to your Apps Script
     fetch(
-    'https://script.google.com/macros/s/AKfycbwfKtoCOG1qkPHOF3JSjRMxIqhsf0KYQ6It7xNDj7Z0ikAPZ-Y30BJgaykadfk_B6R9/exec',
+    'https://script.google.com/macros/s/AKfycbzKpv3vniidj6EY1tK1MsNq19ZM0ZDJOZVpadLGquE3sVy3O21eZH_0lGUcUMU0Cw0/exec',
     {
       method: 'POST',
       mode:   'no-cors',      // ← NO preflight
