@@ -591,9 +591,13 @@ section.hero-section {
 }
 .offer-form .radio-group label {
   margin-right: var(--spacing-md);
-  display: inline-flex;
-  align-items: center;
+
   cursor: pointer;
+  
+  display: flex;
+  align-items: center; /* keep radio + text aligned */
+  gap: 0.5rem;
+
 }
 .offer-form .radio-group input {
   margin-right: var(--spacing-sm);
