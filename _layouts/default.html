@@ -10,6 +10,10 @@
     rel="stylesheet"
   />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"
+/>
 
   <!-- YOUR CSS -->
   <link
@@ -42,5 +46,32 @@
   <script
     src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
   ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/i18n/de.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector("#phone");
+    if (input) {
+      const currentLang = document.documentElement.lang;
+
+      const iti = window.intlTelInput(input, {
+        initialCountry: "at",        // Austria default
+        preferredCountries: ["at","de"], // show AT & DE on top
+        i18n: currentLang === "de" 
+              ? window.intlTelInputGlobals.getI18n("de") 
+              : undefined,           // German names if page.lang = de
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+      });
+
+      // On submit → replace with full international number
+      const form = input.closest("form");
+      if (form) {
+        form.addEventListener("submit", function () {
+          input.value = iti.getNumber(); 
+        });
+      }
+    }
+  });
+</script>
 </body>
 </html>
