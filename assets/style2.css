@@ -602,6 +602,14 @@ section.hero-section {
 .offer-form .radio-group input {
   margin-right: var(--spacing-sm);
 }
+/* Fix radios on iOS Safari without overriding native look */
+input[type="radio"] {
+  -webkit-appearance: radio; /* ensure Safari shows its native circle */
+  appearance: radio;
+  accent-color: #007bff; /* optional: set theme color if supported */
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
 .offer-form .form-row {
   display: flex;
   flex-wrap: wrap;
