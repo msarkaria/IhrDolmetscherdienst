@@ -878,5 +878,10 @@ footer a {
   .hero-content h1 { font-size: 1.8rem; }
   .hero-content p { font-size: 0.9rem; }
   .contact-box { padding: var(--spacing-md); }
- 
+  .radio-group {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
