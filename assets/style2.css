@@ -585,6 +585,10 @@ section.hero-section {
 .offer-form label span {
   color: var(--color-primary);
 }
+.radio-group {
+  display: flex;
+  gap: 1rem; /* spacing between items on desktop */
+}
 .offer-form .radio-group label {
   margin-right: var(--spacing-md);
   display: inline-flex;
@@ -873,5 +877,9 @@ footer a {
   .radio-group {
     flex-direction: column; /* stack vertically */
     gap: 0.5rem; /* tighter spacing when stacked */
+    align-items: flex-start;
+  }
+  .radio-group label {
+    width: 100%;
   }
 }
