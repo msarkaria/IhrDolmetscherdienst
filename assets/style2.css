@@ -526,7 +526,8 @@ section.hero-section {
   /*font-size: var(--fs-lg);*/
   font-weight: 700;
   color: var(--color-accent);
-  word-break: break-word;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .contact-value:hover {
   text-decoration: underline;
@@ -869,4 +870,8 @@ footer a {
   .hero-content h1 { font-size: 1.8rem; }
   .hero-content p { font-size: 0.9rem; }
   .contact-box { padding: var(--spacing-md); }
+  .radio-group {
+    flex-direction: column; /* stack vertically */
+    gap: 0.5rem; /* tighter spacing when stacked */
+  }
 }
