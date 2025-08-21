@@ -878,12 +878,5 @@ footer a {
   .hero-content h1 { font-size: 1.8rem; }
   .hero-content p { font-size: 0.9rem; }
   .contact-box { padding: var(--spacing-md); }
-  .radio-group {
-    flex-direction: column; /* stack vertically */
-    gap: 0.5rem; /* tighter spacing when stacked */
-    align-items: flex-start;
-  }
-  .radio-group label {
-    width: 100%;
-  }
+ 
 }
