@@ -587,28 +587,30 @@ section.hero-section {
 }
 .radio-group {
   display: flex;
-  gap: 1rem; /* spacing between items on desktop */
+  gap: 1.5rem;        /* spacing between radios */
+  flex-wrap: wrap;    /* allow wrapping if not enough space */
 }
-.offer-form .radio-group label {
-  margin-right: var(--spacing-md);
 
-  cursor: pointer;
-  
+.radio-group label {
   display: flex;
-  align-items: center; /* keep radio + text aligned */
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.4rem;        /* space between circle and text */
+  cursor: pointer;
+  white-space: nowrap; /* prevent text breaking oddly */
+}
 
-}
-.offer-form .radio-group input {
-  margin-right: var(--spacing-sm);
-}
-/* Fix radios on iOS Safari without overriding native look */
 input[type="radio"] {
-  -webkit-appearance: radio; /* ensure Safari shows its native circle */
+  -webkit-appearance: radio;
   appearance: radio;
-  accent-color: #007bff; /* optional: set theme color if supported */
-  margin-right: 0.5rem;
-  vertical-align: middle;
+  accent-color: #133665; /* theme color */
+}
+
+@media (max-width: 600px) {
+  .radio-group {
+    flex-direction: column;  /* stack vertically on small screens */
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 .offer-form .form-row {
   display: flex;
