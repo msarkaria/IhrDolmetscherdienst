@@ -602,6 +602,7 @@ section.hero-section {
 input[type="radio"] {
   -webkit-appearance: radio;
   appearance: radio;
+  width:auto !important;
   accent-color: #133665; /* theme color */
 }
 
